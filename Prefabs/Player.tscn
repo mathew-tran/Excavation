@@ -1,6 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1ig2bfgcjehm"]
+[gd_scene load_steps=8 format=3 uid="uid://d1ig2bfgcjehm"]
 
 [ext_resource type="Texture2D" uid="uid://caj0yakxgqubc" path="res://Art/Player/PlayerType1.png" id="1_l2a7s"]
+[ext_resource type="Texture2D" uid="uid://c4sbxfo2xjeo4" path="res://Art/Player/PlayerType1Hand.png" id="2_m0kra"]
+[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="2_wiygv"]
+[ext_resource type="Texture2D" uid="uid://3o773kuure6f" path="res://Art/Tool/PickAxe.png" id="3_4psct"]
+
+[sub_resource type="Animation" id="Animation_nqv4a"]
+resource_name = "SwingTool"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.833333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.97913, 1.30551, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.733333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"CompleteToolSwing"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_73jw6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qodqc"]
+_data = {
+"RESET": SubResource("Animation_73jw6"),
+"SwingTool": SubResource("Animation_nqv4a")
+}
 
 [node name="Player" type="Sprite2D"]
 texture = ExtResource("1_l2a7s")
+script = ExtResource("2_wiygv")
+
+[node name="Hand" type="Sprite2D" parent="."]
+position = Vector2(-1, 46)
+texture = ExtResource("2_m0kra")
+
+[node name="Tool" type="Sprite2D" parent="Hand"]
+position = Vector2(4, -50)
+texture = ExtResource("3_4psct")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qodqc")
+}
+
+[node name="SearchTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

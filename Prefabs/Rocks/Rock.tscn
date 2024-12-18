@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5qq212iv7ss0"]
+
+[ext_resource type="Texture2D" uid="uid://be8g4bt5xf6pv" path="res://Art/Rocks/Rock1/Rock0.png" id="1_pmlje"]
+[ext_resource type="Script" path="res://Scripts/Rocks/Rock.gd" id="2_7fy8d"]
+
+[node name="Rock" type="Sprite2D" groups=["Rock"]]
+texture = ExtResource("1_pmlje")
+script = ExtResource("2_7fy8d")
