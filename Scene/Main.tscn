@@ -6,7 +6,16 @@
 [node name="Node2D" type="Node2D"]
 position = Vector2(292, 325)
 
-[node name="Player" parent="." instance=ExtResource("1_0ex00")]
+[node name="Rocks" type="Node2D" parent="."]
 
-[node name="Rock" parent="." instance=ExtResource("2_vlmoi")]
+[node name="Rock" parent="Rocks" instance=ExtResource("2_vlmoi")]
 position = Vector2(358, -68)
+
+[node name="Rock2" parent="Rocks" instance=ExtResource("2_vlmoi")]
+position = Vector2(787, 416)
+
+[node name="Rock3" parent="Rocks" instance=ExtResource("2_vlmoi")]
+position = Vector2(-24, 157)
+
+[node name="Player" parent="." instance=ExtResource("1_0ex00")]
+position = Vector2(545, 159)

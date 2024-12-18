@@ -8,13 +8,14 @@ var MaxHealth = 10
 var SpriteDir = "res://Art/Rocks/Rock1/Rock"
 
 
-
 func TakeDamage(amount):
 	Health -= amount
+	
 	if Health <= 0:
 		queue_free()
 	else:
 		texture = load(GetHealthStage())
+		$AnimationPlayer.play("hit")
 	
 func GetHealthStage():
 	var percent = float(float(Health) / float(MaxHealth))
