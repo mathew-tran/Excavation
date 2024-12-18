@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cum3j1w78qlyn"
-path="res://.godot/imported/path33.png-d8af6d3f4dc6db51402150b245291901.ctex"
+uid="uid://by13f6kts8s02"
+path="res://.godot/imported/PlayerType1Fingers.png-6a279daf4df830df716de5582cedd2cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Rocks/Rock1/path33.png"
-dest_files=["res://.godot/imported/path33.png-d8af6d3f4dc6db51402150b245291901.ctex"]
+source_file="res://Art/Player/PlayerType1Fingers.png"
+dest_files=["res://.godot/imported/PlayerType1Fingers.png-6a279daf4df830df716de5582cedd2cf.ctex"]
 
 [params]
 

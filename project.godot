@@ -24,3 +24,8 @@ Helper="*res://Scripts/Autoload/Helper.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.215082, 0.142475, 0.040688, 1)

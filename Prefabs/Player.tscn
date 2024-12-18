@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1ig2bfgcjehm"]
+[gd_scene load_steps=10 format=3 uid="uid://d1ig2bfgcjehm"]
 
 [ext_resource type="Texture2D" uid="uid://caj0yakxgqubc" path="res://Art/Player/PlayerType1.png" id="1_l2a7s"]
 [ext_resource type="Texture2D" uid="uid://c4sbxfo2xjeo4" path="res://Art/Player/PlayerType1Hand.png" id="2_m0kra"]
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="2_wiygv"]
 [ext_resource type="Texture2D" uid="uid://3o773kuure6f" path="res://Art/Tool/PickAxe.png" id="3_4psct"]
+[ext_resource type="Texture2D" uid="uid://by13f6kts8s02" path="res://Art/Player/PlayerType1Fingers.png" id="5_ygvtp"]
+[ext_resource type="Texture2D" uid="uid://c8d84ldryvtte" path="res://Art/Player/PlayerType1Thumb.png" id="6_fhcsd"]
 
 [sub_resource type="Animation" id="Animation_nqv4a"]
 resource_name = "SwingTool"
@@ -58,6 +60,7 @@ _data = {
 
 [node name="Player" type="Sprite2D"]
 texture = ExtResource("1_l2a7s")
+offset = Vector2(0, -10.11)
 script = ExtResource("2_wiygv")
 
 [node name="Hand" type="Sprite2D" parent="."]
@@ -68,6 +71,15 @@ texture = ExtResource("2_m0kra")
 position = Vector2(3, -34)
 scale = Vector2(0.795, 0.795)
 texture = ExtResource("3_4psct")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hand"]
+position = Vector2(5, 1)
+scale = Vector2(0.518, 0.667)
+texture = ExtResource("5_ygvtp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Hand"]
+position = Vector2(-2, -7)
+texture = ExtResource("6_fhcsd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -80,3 +92,5 @@ one_shot = true
 
 [node name="IdleTimer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="Camera2D" type="Camera2D" parent="."]
