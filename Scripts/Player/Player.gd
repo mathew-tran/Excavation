@@ -29,6 +29,8 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("click"):
 		MoveToMouse()
+	if event.is_action_pressed("right_click"):
+		GoIdle()
 		
 func _process(delta):
 	$Label.text = STATE.keys()[CurrentState]
@@ -113,11 +115,15 @@ func StartSwingingTool():
 
 func StopSwingingTool():
 	$AnimationPlayer.stop()
-	GoIdle()
+	
+	if CurrentState != STATE.IDLE:
+		GoIdle()
 
 func GoIdle():
 	CurrentState = STATE.IDLE
 	RunAI()
+	MoveObjectReference.Hide()
+	StopSwingingTool()
 
 func _on_area_2d_area_entered(area):
 	if area is Door:
