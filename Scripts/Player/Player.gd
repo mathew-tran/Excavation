@@ -5,93 +5,103 @@ class_name Player
 signal ToolHasSwung
 
 var CurrentTarget : Node2D
-var Speed = 100
+var Speed = 300
 
 enum STATE {
+	NULL,
 	IDLE,
 	LOOK_FOR_TASK,
 	MOVE_TOWARDS_TARGET,
+	SLEEP,
 	MINE
 }
 
 var CurrentState = STATE.IDLE
+var InjectedState = STATE.NULL
+var CurrentPosition = Vector2.ZERO
+var MoveObjectReference : MoveObject
 
 func _ready():
-	RunAI()
+	MoveObjectReference = load("res://Prefabs/MoveObject.tscn").instantiate()
+	get_parent().call_deferred("add_child", MoveObjectReference)
 	
 	
+func _input(event):
+	if event.is_action_pressed("click"):
+		MoveToMouse()
+		
 func _process(delta):
+	$Label.text = STATE.keys()[CurrentState]
 	if CurrentState == STATE.MOVE_TOWARDS_TARGET:
 		MoveTowardsTarget(delta)
-
-
 	
 func RunAI():
-	if CurrentState == STATE.IDLE:
+	if CurrentState == STATE.IDLE or CurrentState == STATE.SLEEP:
 		LookForTask()	
 	
 func LookForTask():
-	CurrentState = STATE.LOOK_FOR_TASK
-	
-	$SearchTimer.start()
-	await $SearchTimer.timeout
-	
-	var closestRock = Helper.GetClosestRock(global_position)
-	if closestRock:
-		CurrentTarget = closestRock
-		CurrentState = STATE.MOVE_TOWARDS_TARGET
+	if $SearchTimer.time_left != 0.0:
 		return
 	
-	scale = Vector2(-1,1)
-	$IdleTimer.start()
-	await $IdleTimer.timeout	
+	if InjectedState != STATE.NULL:
+		CurrentState = InjectedState
+		InjectedState = STATE.NULL
+		RunAI()		
+		return
 	
-	scale = Vector2(1,1)
-	$IdleTimer.start()
-	await $IdleTimer.timeout
+func SetTarget(object):
+	if CurrentState == STATE.MINE:
+		StopSwingingTool()
+		
+	InjectedState = STATE.MOVE_TOWARDS_TARGET
+	CurrentPosition = global_position
 	
-	scale = Vector2(-1,1)
-	$IdleTimer.start()
-	await $IdleTimer.timeout
-	
-	CurrentState = STATE.IDLE
+	CurrentTarget = object
 	RunAI()
 	
+func MoveToMouse():
+	MoveObjectReference.global_position = get_global_mouse_position()	
+	SetTarget(MoveObjectReference)
+	MoveObjectReference.Show()
+	
 func MoveTowardsTarget(delta):
+	if is_instance_valid(CurrentTarget) == false:
+		GoIdle()
+		return
+		
 	var direction = (CurrentTarget.global_position - global_position).normalized()
-	var bIsAligned = false
-	var bIsClose = false
 	if global_position.x > CurrentTarget.global_position.x:
 		scale = Vector2(-1,1)
 	else:
 		scale = Vector2(1,1)
 	
-	if global_position.distance_to(CurrentTarget.global_position) > 100:
-		global_position += direction * Speed * delta
-	else:
-		bIsClose = true
+	var step = Speed * delta
+	CurrentPosition = CurrentPosition.lerp(CurrentTarget.global_position, step/ CurrentPosition.distance_to(CurrentTarget.global_position))
 	
-	if bIsClose:
-		if abs(global_position.y - CurrentTarget.global_position.y) > 5:
-			if global_position.y < CurrentTarget.global_position.y:
-				global_position.y += Speed * 2 * delta
-			else:
-				global_position.y -= Speed * 2 * delta
-		else:
-			bIsAligned = true
+	
+	var bIsCloseToObject = false
+	if CurrentPosition.distance_to(CurrentTarget.global_position) < 30:
+		bIsCloseToObject = true		
+	global_position = CurrentPosition
 		
-	if bIsAligned:
+	if bIsCloseToObject:
 		if CurrentTarget is Rock:
 			CurrentState = STATE.MINE
 			StartSwingingTool()
+		if CurrentTarget is Bed:
+			CurrentTarget.PlacePlayerInBed()
+		if CurrentTarget is MoveObject:			
+			CurrentState = STATE.IDLE
+	
+		MoveObjectReference.Hide()
 	
 func CompleteToolSwing():
 	ToolHasSwung.emit()
 	if is_instance_valid(CurrentTarget):
 		if CurrentTarget is Rock:
 			CurrentTarget.TakeDamage(2)
-		
-		await get_tree().create_timer(.01).timeout
+			
+		await get_tree().create_timer(.1).timeout
 		if is_instance_valid(CurrentTarget) == false:
 			StopSwingingTool()
 			
@@ -103,5 +113,13 @@ func StartSwingingTool():
 
 func StopSwingingTool():
 	$AnimationPlayer.stop()
+	GoIdle()
+
+func GoIdle():
 	CurrentState = STATE.IDLE
 	RunAI()
+
+func _on_area_2d_area_entered(area):
+	if area is Door:
+		area.Enter()
+	pass # Replace with function body.

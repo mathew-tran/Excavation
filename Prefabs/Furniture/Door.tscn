@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2y00vr7ukhd3"]
+
+[ext_resource type="Script" path="res://Scripts/Furniture/Door.gd" id="1_r4yno"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8gftf"]
+load_path = "res://.godot/imported/Door.png-b261a987fef128ebc3d60336afdcfaa5.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puxbc"]
+size = Vector2(162, 266)
+
+[node name="Door" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_r4yno")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("CompressedTexture2D_8gftf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -7)
+shape = SubResource("RectangleShape2D_puxbc")

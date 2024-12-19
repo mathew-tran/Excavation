@@ -33,3 +33,7 @@ func GetHealthStage():
 		return SpriteDir + "1.png"
 	else:
 		return SpriteDir + "2.png"
+
+
+func _on_button_button_up():
+	Finder.GetPlayer().SetTarget(self)
