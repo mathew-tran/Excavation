@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ds71vsjjhk6"]
+
+[ext_resource type="Script" path="res://Scripts/UI/InventoryMaterial.gd" id="1_77l2o"]
+[ext_resource type="Texture2D" uid="uid://b6gu7468al2cm" path="res://Art/Material/Coal.png" id="1_pi6yy"]
+
+[node name="InventoryMaterial" type="VBoxContainer"]
+script = ExtResource("1_77l2o")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("1_pi6yy")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "x"
+
+[node name="Amount" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "20
+"

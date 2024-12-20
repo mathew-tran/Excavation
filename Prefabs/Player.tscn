@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1ig2bfgcjehm"]
+[gd_scene load_steps=12 format=3 uid="uid://d1ig2bfgcjehm"]
 
 [ext_resource type="Texture2D" uid="uid://caj0yakxgqubc" path="res://Art/Player/PlayerType1.png" id="1_l2a7s"]
 [ext_resource type="Texture2D" uid="uid://c4sbxfo2xjeo4" path="res://Art/Player/PlayerType1Hand.png" id="2_m0kra"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://3o773kuure6f" path="res://Art/Tool/PickAxe.png" id="3_4psct"]
 [ext_resource type="Texture2D" uid="uid://by13f6kts8s02" path="res://Art/Player/PlayerType1Fingers.png" id="5_ygvtp"]
 [ext_resource type="Texture2D" uid="uid://c8d84ldryvtte" path="res://Art/Player/PlayerType1Thumb.png" id="6_fhcsd"]
+[ext_resource type="PackedScene" uid="uid://by5ov8qkjuud7" path="res://Prefabs/PlayerUI.tscn" id="7_b7eq4"]
 
 [sub_resource type="Animation" id="Animation_73jw6"]
 length = 0.001
@@ -114,5 +115,7 @@ offset_right = 143.0
 offset_bottom = -92.0
 text = "IDLE"
 horizontal_alignment = 1
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_b7eq4")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
