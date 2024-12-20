@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MaterialResource" load_steps=3 format=3 uid="uid://cvhe2jpmnutdu"]
+
+[ext_resource type="Texture2D" uid="uid://b6gu7468al2cm" path="res://Art/Material/Coal.png" id="1_j4imk"]
+[ext_resource type="Script" path="res://Data/Materials/MaterialResource.gd" id="2_3butp"]
+
+[resource]
+script = ExtResource("2_3butp")
+MaterialName = "Coal"
+MaterialImage = ExtResource("1_j4imk")
+MaterialID = "001"

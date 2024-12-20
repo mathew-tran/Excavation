@@ -6,6 +6,7 @@ var Health = 10
 var MaxHealth = 10
 
 var SpriteDir = "res://Art/Rocks/Rock1/Rock"
+@export var DropChances : Array[MaterialDropChance]
 
 func _ready():
 	flip_h = randi_range(0, 1)
@@ -15,6 +16,8 @@ func TakeDamage(amount):
 	Health -= amount
 	
 	if Health <= 0:
+		for drop in DropChances:
+			drop.Open(global_position)
 		queue_free()
 	else:
 		texture = load(GetHealthStage())

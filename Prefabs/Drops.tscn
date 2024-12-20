@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dg8iyo2ippt3u"]
+
+[node name="Drops" type="Node2D" groups=["Drops"]]

@@ -97,6 +97,7 @@ one_shot = true
 wait_time = 0.2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 3
