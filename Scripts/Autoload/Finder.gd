@@ -17,3 +17,9 @@ func GetDropsGroup():
 	if result:
 		return result[0]
 	return null
+
+func GetInventory() -> Inventory:
+	var result = get_tree().get_nodes_in_group("Inventory")
+	if result:
+		return result[0]
+	return null

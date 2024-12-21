@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8pxytxtcd7p1"]
+[gd_scene load_steps=11 format=3 uid="uid://c8pxytxtcd7p1"]
 
 [ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="1_0ex00"]
 [ext_resource type="Script" path="res://Data/MaterialDropChance.gd" id="2_isnx8"]
 [ext_resource type="PackedScene" uid="uid://b5qq212iv7ss0" path="res://Prefabs/Rocks/Rock.tscn" id="2_vlmoi"]
 [ext_resource type="Resource" uid="uid://cv5blbplmpe3x" path="res://Data/Materials/001_Stone.tres" id="3_b62ps"]
 [ext_resource type="Resource" uid="uid://buioxgbfobljq" path="res://Data/Materials/003_Iron.tres" id="4_lec4y"]
+[ext_resource type="Resource" uid="uid://cvhe2jpmnutdu" path="res://Data/Materials/002_Coal.tres" id="5_r1n88"]
 [ext_resource type="PackedScene" uid="uid://dg8iyo2ippt3u" path="res://Prefabs/Drops.tscn" id="6_jy335"]
 
 [sub_resource type="Resource" id="Resource_j7i21"]
@@ -21,6 +22,13 @@ DropAmount = 0
 DropRange = 3
 DropChance = 50
 
+[sub_resource type="Resource" id="Resource_fnrkd"]
+script = ExtResource("2_isnx8")
+MatResource = ExtResource("5_r1n88")
+DropAmount = 5
+DropRange = 3
+DropChance = 100
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(292, 325)
 
@@ -30,8 +38,17 @@ position = Vector2(292, 325)
 position = Vector2(358, -68)
 DropChances = Array[ExtResource("2_isnx8")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
+[node name="Rock4" parent="Rocks" instance=ExtResource("2_vlmoi")]
+position = Vector2(-5, -118)
+DropChances = Array[ExtResource("2_isnx8")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock5" parent="Rocks" instance=ExtResource("2_vlmoi")]
+position = Vector2(703, -243)
+DropChances = Array[ExtResource("2_isnx8")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
 [node name="Rock2" parent="Rocks" instance=ExtResource("2_vlmoi")]
 position = Vector2(787, 416)
+DropChances = Array[ExtResource("2_isnx8")]([SubResource("Resource_fnrkd")])
 
 [node name="Rock3" parent="Rocks" instance=ExtResource("2_vlmoi")]
 position = Vector2(-24, 157)

@@ -21,12 +21,25 @@ var InjectedState = STATE.NULL
 var CurrentPosition = Vector2.ZERO
 var MoveObjectReference : MoveObject
 
+var bCanAction = true
+
+func DisablePlayerControls():
+	bCanAction = false
+
+func EnablePlayerControls():
+	bCanAction = true
+	
 func _ready():
 	MoveObjectReference = load("res://Prefabs/MoveObject.tscn").instantiate()
 	get_parent().call_deferred("add_child", MoveObjectReference)
 	
+func CanControlPlayer():
+	return bCanAction
 	
 func _input(event):
+	if CanControlPlayer() == false:
+		return
+		
 	if event.is_action_pressed("click"):
 		MoveToMouse()
 	if event.is_action_pressed("right_click"):
@@ -37,7 +50,7 @@ func _process(delta):
 	if CurrentState == STATE.MOVE_TOWARDS_TARGET:
 		MoveTowardsTarget(delta)
 	
-func RunAI():
+func RunAI():		
 	if CurrentState == STATE.IDLE or CurrentState == STATE.SLEEP:
 		LookForTask()	
 	
