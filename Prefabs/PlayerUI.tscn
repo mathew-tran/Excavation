@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://by5ov8qkjuud7"]
+[gd_scene load_steps=5 format=3 uid="uid://by5ov8qkjuud7"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerUI.gd" id="1_u2se8"]
 [ext_resource type="PackedScene" uid="uid://bfpi8gk7hyujl" path="res://Prefabs/UI/Inventory.tscn" id="2_p1x8q"]
+[ext_resource type="PackedScene" uid="uid://be0n7y4kx1son" path="res://Prefabs/UI/LevelSelect/LevelSelect.tscn" id="3_e4aoh"]
+[ext_resource type="Script" path="res://Scripts/UI/LevelSelect/LevelSelect.gd" id="4_2yhbq"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_u2se8")
@@ -13,5 +15,9 @@ anchor_right = 1.0
 offset_left = -500.0
 offset_right = 0.0
 grow_horizontal = 0
+
+[node name="LevelSelect" parent="." instance=ExtResource("3_e4aoh")]
+visible = false
+script = ExtResource("4_2yhbq")
 
 [connection signal="CompleteInitialization" from="Inventory" to="." method="_on_inventory_complete_initialization"]

@@ -53,7 +53,6 @@ DropChances = Array[ExtResource("2_isnx8")]([SubResource("Resource_fnrkd")])
 [node name="Rock3" parent="Rocks" instance=ExtResource("2_vlmoi")]
 position = Vector2(-24, 157)
 
-[node name="Player" parent="." instance=ExtResource("1_0ex00")]
-position = Vector2(545, 159)
-
 [node name="Drops" parent="." instance=ExtResource("6_jy335")]
+
+[node name="Player" parent="." instance=ExtResource("1_0ex00")]

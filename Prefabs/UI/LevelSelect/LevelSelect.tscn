@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://be0n7y4kx1son"]
+
+[ext_resource type="Script" path="res://Scripts/UI/LevelSelect/LevelSelect.gd" id="1_h0mfk"]
+[ext_resource type="PackedScene" uid="uid://dywv44rt1cbxy" path="res://Prefabs/UI/LevelSelect/LevelSelectButton.tscn" id="2_0wmkn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3it8"]
+bg_color = Color(0.000693897, 0.000693898, 0.000693897, 1)
+
+[node name="LevelSelect" type="Panel" groups=["LevelSelect"]]
+custom_minimum_size = Vector2(800, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -400.0
+offset_right = 400.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l3it8")
+script = ExtResource("1_h0mfk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(780, 780)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -154.5
+offset_right = 125.0
+offset_bottom = 154.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Levels" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LevelButton" parent="VBoxContainer/Levels" instance=ExtResource("2_0wmkn")]
+layout_mode = 2

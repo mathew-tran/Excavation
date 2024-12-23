@@ -12,6 +12,12 @@ func GetPlayer() -> Player:
 		return result[0]
 	return null
 
+func GetLevelSelect() -> LevelSelect:
+	var result = get_tree().get_nodes_in_group("LevelSelect")
+	if result:
+		return result[0]
+	return null
+	
 func GetDropsGroup():
 	var result = get_tree().get_nodes_in_group("Drops")
 	if result:

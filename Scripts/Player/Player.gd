@@ -45,7 +45,7 @@ func _input(event):
 	if event.is_action_pressed("right_click"):
 		GoIdle()
 		
-func _process(delta):
+func _process(_delta):
 	if CanControlPlayer():
 		if Input.is_action_pressed("click"):
 			MoveToMouse()

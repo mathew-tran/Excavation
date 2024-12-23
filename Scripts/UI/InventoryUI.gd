@@ -14,7 +14,6 @@ func ClearInventory():
 		child.queue_free()
 		
 func InitializeInventory():
-	var inventory = Finder.GetInventory()
 	for invSlot in Finder.GetInventory().GetItems():
 		var instance = load("res://Prefabs/UI/InventoryMaterial.tscn").instantiate()
 		ContainerReference.add_child(instance)
