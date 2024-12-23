@@ -32,6 +32,8 @@ func EnablePlayerControls():
 func _ready():
 	MoveObjectReference = load("res://Prefabs/MoveObject.tscn").instantiate()
 	get_parent().call_deferred("add_child", MoveObjectReference)
+	await get_tree().process_frame
+	SaveManager.Load()
 	
 func CanControlPlayer():
 	return bCanAction
@@ -39,13 +41,14 @@ func CanControlPlayer():
 func _input(event):
 	if CanControlPlayer() == false:
 		return
-		
-	if event.is_action_pressed("click"):
-		MoveToMouse()
+
 	if event.is_action_pressed("right_click"):
 		GoIdle()
 		
 func _process(delta):
+	if CanControlPlayer():
+		if Input.is_action_pressed("click"):
+			MoveToMouse()
 	$Label.text = STATE.keys()[CurrentState]
 	if CurrentState == STATE.MOVE_TOWARDS_TARGET:
 		MoveTowardsTarget(delta)

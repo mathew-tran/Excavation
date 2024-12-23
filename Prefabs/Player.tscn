@@ -122,6 +122,5 @@ visible = false
 
 [node name="Inventory" type="Node" parent="." groups=["Inventory"]]
 script = ExtResource("8_p1ibi")
-MaxItemAmount = 3
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
