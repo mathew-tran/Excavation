@@ -1,11 +1,11 @@
-extends Sprite2D
+extends RigidBody2D
 
 class_name Player
 
 signal ToolHasSwung
 
 var CurrentTarget : Node2D
-var Speed = 300
+var Speed = 15000
 
 enum STATE {
 	NULL,
@@ -18,7 +18,6 @@ enum STATE {
 
 var CurrentState = STATE.IDLE
 var InjectedState = STATE.NULL
-var CurrentPosition = Vector2.ZERO
 var MoveObjectReference : MoveObject
 
 var bCanAction = true
@@ -30,6 +29,7 @@ func EnablePlayerControls():
 	bCanAction = true
 	
 func _ready():
+	lock_rotation = true
 	MoveObjectReference = load("res://Prefabs/MoveObject.tscn").instantiate()
 	get_parent().call_deferred("add_child", MoveObjectReference)
 	await get_tree().process_frame
@@ -49,16 +49,19 @@ func _process(delta):
 	if CanControlPlayer():
 		if Input.is_action_pressed("click"):
 			MoveToMouse()
-	$Label.text = STATE.keys()[CurrentState]
+	
+func _physics_process(delta):
 	if CurrentState == STATE.MOVE_TOWARDS_TARGET:
 		MoveTowardsTarget(delta)
+	else:
+		linear_velocity = Vector2.ZERO
 	
 func RunAI():		
 	if CurrentState == STATE.IDLE or CurrentState == STATE.SLEEP:
 		LookForTask()	
 	
 func LookForTask():
-	if $SearchTimer.time_left != 0.0:
+	if $Player/SearchTimer.time_left != 0.0:
 		return
 	
 	if InjectedState != STATE.NULL:
@@ -72,7 +75,6 @@ func SetTarget(object):
 		StopSwingingTool()
 		
 	InjectedState = STATE.MOVE_TOWARDS_TARGET
-	CurrentPosition = global_position
 	
 	CurrentTarget = object
 	RunAI()
@@ -81,6 +83,10 @@ func MoveToMouse():
 	MoveObjectReference.global_position = get_global_mouse_position()	
 	SetTarget(MoveObjectReference)
 	MoveObjectReference.Show()
+	#
+#func _integrate_forces(state):
+	#if linear_velocity.length() > 1000:
+		#linear_velocity = linear_velocity.normalized() * 1000
 	
 func MoveTowardsTarget(delta):
 	if is_instance_valid(CurrentTarget) == false:
@@ -89,18 +95,15 @@ func MoveTowardsTarget(delta):
 		
 	var direction = (CurrentTarget.global_position - global_position).normalized()
 	if global_position.x > CurrentTarget.global_position.x:
-		scale = Vector2(-1,1)
+		$Player.scale = Vector2(-1,1)
 	else:
-		scale = Vector2(1,1)
+		$Player.scale = Vector2(1,1)
 	
-	var step = Speed * delta
-	CurrentPosition = CurrentPosition.lerp(CurrentTarget.global_position, step/ CurrentPosition.distance_to(CurrentTarget.global_position))
-	
-	
+	linear_velocity = direction * Speed * delta
+
 	var bIsCloseToObject = false
-	if CurrentPosition.distance_to(CurrentTarget.global_position) < 30:
+	if global_position.distance_to(CurrentTarget.global_position) < 30:
 		bIsCloseToObject = true		
-	global_position = CurrentPosition
 		
 	if bIsCloseToObject:
 		if CurrentTarget is Rock:
@@ -127,10 +130,10 @@ func CompleteToolSwing():
 		StopSwingingTool()
 	
 func StartSwingingTool():
-	$AnimationPlayer.play("SwingTool")
+	$Player/AnimationPlayer.play("SwingTool")
 
 func StopSwingingTool():
-	$AnimationPlayer.stop()
+	$Player/AnimationPlayer.stop()
 	
 	if CurrentState != STATE.IDLE:
 		GoIdle()

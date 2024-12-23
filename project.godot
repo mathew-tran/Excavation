@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Excavation"
-run/main_scene="res://Scene/House.tscn"
+run/main_scene="res://Scene/Hub.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

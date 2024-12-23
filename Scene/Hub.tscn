@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdsdbdlxtshha"]
+
+[ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="1_0waba"]
+[ext_resource type="PackedScene" uid="uid://dwrw4xt53lac8" path="res://Prefabs/Blocking/Boulder1.tscn" id="2_4esxx"]
+[ext_resource type="PackedScene" uid="uid://c7f7eol1o8f1t" path="res://Prefabs/Blocking/Boulder2.tscn" id="2_lht2q"]
+[ext_resource type="PackedScene" uid="uid://c3jrdvsowvmi" path="res://Prefabs/Blocking/Boulder3.tscn" id="3_5kge5"]
+[ext_resource type="PackedScene" uid="uid://djhdjtw1ljfl2" path="res://Prefabs/Blocking/Boulder4.tscn" id="4_7udps"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Boulder1" parent="Environment" instance=ExtResource("2_4esxx")]
+position = Vector2(2183, 226)
+
+[node name="Boulder8" parent="Environment" instance=ExtResource("2_4esxx")]
+position = Vector2(2035, 788)
+rotation = -0.725749
+
+[node name="Boulder22" parent="Environment" instance=ExtResource("2_4esxx")]
+position = Vector2(2612, 619)
+rotation = -0.126059
+
+[node name="Boulder13" parent="Environment" instance=ExtResource("2_4esxx")]
+position = Vector2(2181, -218)
+rotation = -0.725749
+
+[node name="Boulder2" parent="Environment" instance=ExtResource("2_lht2q")]
+position = Vector2(18, 954)
+
+[node name="Boulder7" parent="Environment" instance=ExtResource("2_lht2q")]
+position = Vector2(944, 1354)
+
+[node name="Boulder3" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(1822, 1110)
+rotation = -1.47864
+
+[node name="Boulder5" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(1370, 1260)
+rotation = -1.32308
+
+[node name="Boulder6" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(524, 1214)
+rotation = -1.32308
+
+[node name="Boulder10" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(718, -372)
+rotation = -2.67306
+
+[node name="Boulder11" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(1288, -344)
+rotation = -3.26156
+
+[node name="Boulder12" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(1780, -256)
+rotation = -4.7085
+
+[node name="Boulder23" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(2045, -577)
+rotation = -4.7085
+
+[node name="Boulder24" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(1414, -788)
+rotation = -4.7085
+
+[node name="Boulder25" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(810, -786)
+rotation = -4.7085
+
+[node name="Boulder26" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(217, -687)
+rotation = -4.7085
+
+[node name="Boulder27" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(-450, -386)
+rotation = -4.7085
+
+[node name="Boulder28" parent="Environment" instance=ExtResource("3_5kge5")]
+position = Vector2(-183, -705)
+rotation = -4.7085
+
+[node name="Boulder4" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(-109, 453)
+
+[node name="Boulder9" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(77, -189)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Boulder14" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(-417, 709)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Boulder15" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(-359, 137)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Boulder16" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(26.9999, 1392)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Boulder17" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(656, 1621)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Boulder18" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(1233, 1704)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Boulder19" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(1871, 1565)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Boulder20" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(2446, 977)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Boulder21" parent="Environment" instance=ExtResource("4_7udps")]
+position = Vector2(2655, -253)
+scale = Vector2(1.30814, 1.30243)
+
+[node name="Player" parent="." instance=ExtResource("1_0waba")]
+position = Vector2(898, 548)
