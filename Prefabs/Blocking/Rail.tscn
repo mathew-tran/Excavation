@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4wt08pawg5m3"]
+
+[ext_resource type="Texture2D" uid="uid://co0dn3vft1lh7" path="res://Art/Blocking/Rail.png" id="1_1s1fs"]
+
+[node name="Rail" type="Sprite2D"]
+texture = ExtResource("1_1s1fs")

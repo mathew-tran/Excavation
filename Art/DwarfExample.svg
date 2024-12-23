@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.4342733"
-     inkscape:cx="209.86237"
-     inkscape:cy="284.116"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="739.63369"
+     inkscape:cy="-130.81475"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-7"
@@ -447,6 +447,25 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 173.78585,-25.532291 -0.13229,18.3885411 3.0427,-0.2645833 -0.26458,-17.7270828 z"
+       id="path27"
+       inkscape:export-filename="Blocking\Rail.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 178.57614,-24.976337 0.0935,17.1186129 4.02241,-0.093544 -1.77735,-17.7734239 z"
+       id="path30" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 186.99513,-25.350514 -3.08696,18.2411448 3.18051,-0.1870888 2.15151,-18.521778 z"
+       id="path31" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 191.85942,-25.25697 -1.02899,17.8669676 h 2.43216 l 0.93544,-18.8959556 z"
+       id="path34" />
     <path
        id="path74"
        style="fill:#49d26d;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linecap:round;stroke-dasharray:none"
@@ -880,5 +899,110 @@
        id="path75"
        style="fill:#49d26d;fill-opacity:1;stroke:none;stroke-width:0.634234;stroke-linecap:round;stroke-dasharray:none"
        d="m 101.59297,92.319484 a 9.3598682,9.3598682 0 0 0 -9.359686,9.359696 9.3598682,9.3598682 0 0 0 9.359686,9.3597 9.3598682,9.3598682 0 0 0 9.3597,-9.3597 9.3598682,9.3598682 0 0 0 -9.3597,-9.359696 z m 0,2.636742 a 6.7228388,6.7228388 0 0 1 6.72296,6.722954 6.7228388,6.7228388 0 0 1 -6.72296,6.72296 6.7228388,6.7228388 0 0 1 -6.722956,-6.72296 6.7228388,6.7228388 0 0 1 6.722956,-6.722954 z" />
+    <path
+       style="fill:#211f21;stroke-width:0.1;stroke-linecap:round"
+       d="m 243.6646,-131.74585 c 1.5653,-4.17412 12.00061,-24.78387 -3.65236,-32.08859 -15.65297,-7.30472 -44.35009,-22.95769 -60.00306,-22.95769 -15.65297,0 -47.48068,21.91416 -49.04598,26.08828 -1.5653,4.17413 -8.34825,33.39301 -8.34825,39.13243 0,5.73943 5.73942,44.871856 5.73942,44.871856 0,0 42.26303,28.175352 48.00245,28.175352 5.73942,0 74.09074,-5.739424 75.13427,-8.870019 1.04353,-3.130595 7.30472,-41.741259 3.65236,-44.871849 -3.65236,-3.1306 -4.17413,-16.43562 -4.69589,-18.52269 -0.52177,-2.08706 -6.78296,-10.95708 -6.78296,-10.95708 z"
+       id="path21"
+       sodipodi:nodetypes="csssscssssc"
+       inkscape:export-filename="Blocking\Boulder2.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#211f21;stroke-width:0.1;stroke-linecap:round"
+       d="m 345.93068,-163.83444 c 2.60884,-5.73942 41.2195,-16.6965 44.3501,-17.74003 3.13058,-1.04353 46.95892,8.87002 53.22009,10.43532 6.26118,1.56529 27.13183,19.30533 28.17535,23.47945 1.04354,4.17413 6.26121,32.34948 0,43.82832 -6.26118,11.478843 -1.04352,30.262413 -16.6965,41.741258 -15.65296,11.478847 -41.74125,22.957691 -53.74188,23.479458 -12.0006,0.521766 -48.00243,2.608828 -59.48129,-2.087063 -11.47885,-4.695891 -30.78417,-16.696504 -33.91477,-32.349476 -3.13058,-15.652974 7.30472,-74.612497 10.95708,-75.656027 3.65236,-1.04353 27.13182,-15.13121 27.13182,-15.13121 z"
+       id="path22"
+       sodipodi:nodetypes="csssssssssc"
+       inkscape:export-filename="Blocking\Boulder3.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#211f21;stroke-width:0.1;stroke-linecap:round"
+       d="m 45.508332,-178.85832 c -10.583333,-6.35 -119.591665,-23.28334 -124.883332,-22.225 -5.291667,1.05833 -28.575,53.975 -26.45833,68.79166 2.11666,14.81667 0,38.099997 19.049997,47.624995 19.05,9.525 64.558333,14.816667 71.966667,14.816667 7.4083324,0 35.983331,10.583333 47.624998,-7.408334 11.641666,-17.991661 43.391661,-59.266658 38.099999,-75.141658 -5.291666,-15.875 -25.399999,-26.45833 -25.399999,-26.45833 z"
+       id="path23"
+       inkscape:export-filename="Blocking\Boulder1.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#7e8c7a;stroke-width:0.1;stroke-linecap:round"
+       d="m 554.56666,-176.74166 c 0,0 -45.50834,59.26666 -44.45,70.90833 1.05833,11.641665 16.93333,53.974998 21.16666,56.091664 4.23334,2.116667 60.325,33.866666 71.96667,33.866666 11.64167,0 66.675,-20.108333 73.025,-45.508332 6.35,-25.4 12.7,-53.974998 -3.175,-74.083328 -15.875,-20.10833 -33.86667,-39.15833 -43.39167,-42.33333 -9.525,-3.175 -41.275,-5.29167 -45.50833,-5.29167 -4.23333,0 -29.63333,6.35 -29.63333,6.35 z"
+       id="path26"
+       inkscape:export-filename="Blocking\Boulder4.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 199.06235,-25.069881 -3.08696,18.2411448 3.18051,-0.1870888 2.15151,-18.521778 z"
+       id="path36" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 213.65527,-24.976337 -3.08696,18.2411451 3.18051,-0.1870888 2.15151,-18.5217783 z"
+       id="path37" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 230.02553,-25.163426 -3.08696,18.2411454 3.18051,-0.1870888 2.15151,-18.5217786 z"
+       id="path38" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 245.08617,-25.25697 -3.08696,18.2411451 3.18051,-0.1870888 2.15151,-18.5217783 z"
+       id="path39" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 256.1244,-25.25697 -3.08696,18.2411451 3.18051,-0.1870888 2.15151,-18.5217783 z"
+       id="path40" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 202.89765,-25.163426 -1.02899,17.8669679 h 2.43216 l 0.93544,-18.8959559 z"
+       id="path41" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 208.79094,-24.508616 -1.02899,17.8669682 h 2.43216 l 0.93544,-18.8959562 z"
+       id="path42" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 223.75803,-24.415072 -1.02899,17.8669685 h 2.43216 l 0.93544,-18.8959565 z"
+       id="path43" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 218.51955,-24.508616 -1.02899,17.8669682 h 2.43216 l 0.93544,-18.8959562 z"
+       id="path76" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="M 250.04399,-24.976338 249.015,-7.1093695 h 2.43216 l 0.93544,-18.8959565 z"
+       id="path77" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 238.63158,-24.695705 -1.02899,17.8669685 h 2.43216 l 0.93544,-18.8959565 z"
+       id="path78" />
+    <path
+       style="fill:#a46935;stroke-width:0.1;stroke-linecap:round"
+       d="m 234.6092,-24.882793 -3.08696,18.2411454 3.18051,-0.1870888 2.15151,-18.5217786 z"
+       id="path79" />
+    <rect
+       style="fill:#7e8c7a;stroke-width:0.1;stroke-linecap:round"
+       id="rect26"
+       width="89.429169"
+       height="3.96875"
+       x="171.97917"
+       y="-26.987499"
+       ry="0.64565217" />
+    <rect
+       style="fill:#7e8c7a;stroke-width:0.1;stroke-linecap:round"
+       id="rect27"
+       width="89.429169"
+       height="3.96875"
+       x="171.97917"
+       y="-8.7312489"
+       ry="0.64565217" />
+    <path
+       style="fill:#486363;stroke-width:0.1;stroke-linecap:round"
+       d="M 290.17452,-18.241145 V 8.8867117 h 4.86431 V -18.9895 Z"
+       id="path80"
+       inkscape:export-filename="Blocking\Gate.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#486363;stroke-width:0.1;stroke-linecap:round"
+       d="m 290.17452,-19.8314 v -27.127856 h 4.86431 v 27.876211 z"
+       id="path81" />
   </g>
 </svg>

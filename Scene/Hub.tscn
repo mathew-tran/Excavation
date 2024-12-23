@@ -1,20 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdsdbdlxtshha"]
+[gd_scene load_steps=9 format=3 uid="uid://cdsdbdlxtshha"]
 
 [ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="1_0waba"]
 [ext_resource type="PackedScene" uid="uid://dwrw4xt53lac8" path="res://Prefabs/Blocking/Boulder1.tscn" id="2_4esxx"]
 [ext_resource type="PackedScene" uid="uid://c7f7eol1o8f1t" path="res://Prefabs/Blocking/Boulder2.tscn" id="2_lht2q"]
 [ext_resource type="PackedScene" uid="uid://c3jrdvsowvmi" path="res://Prefabs/Blocking/Boulder3.tscn" id="3_5kge5"]
 [ext_resource type="PackedScene" uid="uid://djhdjtw1ljfl2" path="res://Prefabs/Blocking/Boulder4.tscn" id="4_7udps"]
+[ext_resource type="PackedScene" uid="uid://4wt08pawg5m3" path="res://Prefabs/Blocking/Rail.tscn" id="5_xv7fs"]
+[ext_resource type="PackedScene" uid="uid://dixk1sgsiq68d" path="res://Prefabs/Blocking/Gate.tscn" id="7_biec1"]
+[ext_resource type="PackedScene" uid="uid://cfk0rui35311t" path="res://Prefabs/Blocking/Minecart.tscn" id="8_a3vq5"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Environment" type="Node2D" parent="."]
 
-[node name="Boulder1" parent="Environment" instance=ExtResource("2_4esxx")]
-position = Vector2(2183, 226)
-
 [node name="Boulder8" parent="Environment" instance=ExtResource("2_4esxx")]
 position = Vector2(2035, 788)
+rotation = -0.725749
+
+[node name="Boulder30" parent="Environment" instance=ExtResource("2_4esxx")]
+position = Vector2(2096, 712)
 rotation = -0.725749
 
 [node name="Boulder22" parent="Environment" instance=ExtResource("2_4esxx")]
@@ -23,6 +27,10 @@ rotation = -0.126059
 
 [node name="Boulder13" parent="Environment" instance=ExtResource("2_4esxx")]
 position = Vector2(2181, -218)
+rotation = -0.725749
+
+[node name="Boulder29" parent="Environment" instance=ExtResource("2_4esxx")]
+position = Vector2(2264, -88)
 rotation = -0.725749
 
 [node name="Boulder2" parent="Environment" instance=ExtResource("2_lht2q")]
@@ -118,5 +126,26 @@ scale = Vector2(1.30814, 1.30243)
 position = Vector2(2655, -253)
 scale = Vector2(1.30814, 1.30243)
 
+[node name="Rail" parent="Environment" instance=ExtResource("5_xv7fs")]
+position = Vector2(1840, 336)
+
+[node name="Rail2" parent="Environment" instance=ExtResource("5_xv7fs")]
+position = Vector2(2160, 336)
+
+[node name="Rail3" parent="Environment" instance=ExtResource("5_xv7fs")]
+position = Vector2(2480, 336)
+
+[node name="Rail4" parent="Environment" instance=ExtResource("5_xv7fs")]
+position = Vector2(2808, 336)
+
+[node name="Rail5" parent="Environment" instance=ExtResource("5_xv7fs")]
+position = Vector2(3136, 336)
+
 [node name="Player" parent="." instance=ExtResource("1_0waba")]
 position = Vector2(898, 548)
+
+[node name="Gate" parent="." instance=ExtResource("7_biec1")]
+position = Vector2(2144, 336)
+
+[node name="Minecart" parent="." instance=ExtResource("8_a3vq5")]
+position = Vector2(1776, 288)

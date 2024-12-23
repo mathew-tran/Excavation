@@ -52,4 +52,4 @@ clear_data={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.215082, 0.142475, 0.040688, 1)
+environment/defaults/default_clear_color=Color(0.18673, 0.133439, 0.00594574, 1)
