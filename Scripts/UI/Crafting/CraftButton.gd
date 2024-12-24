@@ -45,5 +45,6 @@ func _on_button_button_up():
 	for item in ItemContainer.get_children():
 		Finder.GetInventory().RemoveItem(item.CraftReq.MaterialType, item.CraftReq.MaterialAmount)
 	CraftCompleted.emit()
-	
+	CraftingResource.Give()
+	SaveManager.Save()
 	queue_free()

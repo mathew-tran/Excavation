@@ -35,6 +35,12 @@ func _ready():
 	await get_tree().process_frame
 	SaveManager.Load()
 	
+	if Progression.HasEntitlement("MINING_SPEED_1"):
+		IncreaseMiningSpeed(10.1)
+
+func IncreaseMiningSpeed(amount):
+	$Player/AnimationPlayer.speed_scale *= amount
+	
 func CanControlPlayer():
 	return bCanAction
 	

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CraftTrack" load_steps=4 format=3 uid="uid://0i3lh7ognroj"]
+
+[ext_resource type="Script" path="res://Data/Crafts/CraftResource.gd" id="1_6skm0"]
+[ext_resource type="Resource" uid="uid://bt2xhur8il26r" path="res://Data/Crafts/Main/001_Main.tres" id="2_kbm60"]
+[ext_resource type="Script" path="res://Data/Crafts/CraftTrack.gd" id="2_q8div"]
+
+[resource]
+script = ExtResource("2_q8div")
+TrackName = "MAIN"
+Crafts = Array[ExtResource("1_6skm0")]([ExtResource("2_kbm60")])
+bUnlockedByDefault = true

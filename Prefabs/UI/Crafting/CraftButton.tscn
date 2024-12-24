@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://8qh0cw30qc7s" path="res://Prefabs/UI/Crafting/CraftRequirement.tscn" id="1_1f26g"]
 [ext_resource type="Script" path="res://Scripts/UI/Crafting/CraftButton.gd" id="1_b7fs4"]
-[ext_resource type="Resource" uid="uid://bt2xhur8il26r" path="res://Data/Crafts/001_Craft.tres" id="2_kix6b"]
+[ext_resource type="Resource" uid="uid://bt2xhur8il26r" path="res://Data/Crafts/Main/001_Main.tres" id="2_kix6b"]
 
 [node name="CraftButton" type="Panel"]
 custom_minimum_size = Vector2(300, 200)
