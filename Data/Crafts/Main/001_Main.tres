@@ -20,6 +20,6 @@ Entitlement = ExtResource("4_dypwo")
 script = ExtResource("5_34ufs")
 Title = "Research Pick Axe Strength"
 Description = "Increase Pick Axe Strength by 10%"
-CraftID = "000"
+CraftID = "001"
 Requirements = Array[ExtResource("1_dnhq7")]([SubResource("Resource_3srxr")])
 Rewards = Array[ExtResource("3_lkkn3")]([SubResource("Resource_wysy4")])

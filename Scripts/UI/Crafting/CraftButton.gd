@@ -1,12 +1,17 @@
 extends Panel
 
+class_name CraftButton
+
 @export var CraftingResource : CraftResource
+var RelatedTrack : CraftTrack
 
 @onready var ItemContainer = $VBoxContainer/GridContainer
 
-signal CraftCompleted
+signal CraftCompleted(craftButton)
 
-func _ready():
+func Setup(craftResource : CraftResource, craftTrack : CraftTrack):
+	CraftingResource = craftResource
+	RelatedTrack = craftTrack
 	if Finder.GetInventory().bHasBeenLoaded == false:
 		await Finder.GetInventory().InventoryLoaded
 	$VBoxContainer/Title.text = CraftingResource.Title
@@ -24,6 +29,8 @@ func _ready():
 	UpdateButton()
 	
 func UpdateButton():
+	if is_instance_valid(self) == false:
+		return
 	var bIsPurchaseable = true
 	for item in ItemContainer.get_children():
 		if item.DoesMeetRequirement() == false:
@@ -44,7 +51,7 @@ func _on_button_button_up():
 	# Assuming player has the right amount of materials.
 	for item in ItemContainer.get_children():
 		Finder.GetInventory().RemoveItem(item.CraftReq.MaterialType, item.CraftReq.MaterialAmount)
-	CraftCompleted.emit()
+	CraftCompleted.emit(self)
 	CraftingResource.Give()
 	SaveManager.Save()
 	queue_free()
