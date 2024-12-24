@@ -2,6 +2,7 @@ extends Panel
 
 var InventorySlotReference : InventorySlot
 
+var SlotInfoText = "EMPTY"
 func _ready():
 	Hide()
 	
@@ -16,7 +17,7 @@ func Setup(inventorySlot : InventorySlot):
 func OnUpdate():
 	$HBoxContainer/HBoxContainer/Amount.text = str(InventorySlotReference.Amount)
 	$HBoxContainer/TextureRect.texture = InventorySlotReference.ItemType.MaterialImage
-	$HBoxContainer/Info/Label.text = InventorySlotReference.ItemType.MaterialName
+	SlotInfoText = InventorySlotReference.ItemType.MaterialName
 	Show()
 	
 func Show():
@@ -32,8 +33,8 @@ func Hide():
 
 func _on_h_box_container_mouse_entered():
 	$Panel.visible = true
-	$HBoxContainer/Info.visible = true
+	Finder.GetInfoPopup().Show(SlotInfoText)
 
 func _on_h_box_container_mouse_exited():
 	$Panel.visible = false
-	$HBoxContainer/Info.visible = false
+	Finder.GetInfoPopup().Hide()

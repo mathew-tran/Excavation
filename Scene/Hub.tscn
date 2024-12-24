@@ -17,6 +17,33 @@
 
 [node name="Environment" type="Node2D" parent="."]
 
+[node name="Node2D4" parent="Environment" instance=ExtResource("11_7cu6u")]
+position = Vector2(1928, 480)
+
+[node name="Node2D5" parent="Environment" instance=ExtResource("10_od6oc")]
+position = Vector2(2112, 240)
+
+[node name="Node2D" parent="Environment" instance=ExtResource("10_od6oc")]
+position = Vector2(1936, 216)
+
+[node name="Node2D2" parent="Environment" instance=ExtResource("11_7cu6u")]
+position = Vector2(2056, 432)
+
+[node name="Node2D3" parent="Environment" instance=ExtResource("12_cbmm2")]
+position = Vector2(1808, 592)
+
+[node name="Node2D6" parent="Environment" instance=ExtResource("12_cbmm2")]
+position = Vector2(1968, 464)
+
+[node name="Node2D7" parent="Environment" instance=ExtResource("12_cbmm2")]
+position = Vector2(2104, 416)
+
+[node name="Node2D8" parent="Environment" instance=ExtResource("12_cbmm2")]
+position = Vector2(2040, 248)
+
+[node name="Node2D9" parent="Environment" instance=ExtResource("12_cbmm2")]
+position = Vector2(2000, 272)
+
 [node name="Boulder8" parent="Environment" instance=ExtResource("2_4esxx")]
 position = Vector2(2035, 788)
 rotation = -0.725749
@@ -156,30 +183,3 @@ position = Vector2(2144, 336)
 
 [node name="Minecart" parent="." instance=ExtResource("8_a3vq5")]
 position = Vector2(1776, 288)
-
-[node name="Node2D" parent="." instance=ExtResource("10_od6oc")]
-position = Vector2(1936, 216)
-
-[node name="Node2D2" parent="." instance=ExtResource("11_7cu6u")]
-position = Vector2(2056, 432)
-
-[node name="Node2D3" parent="." instance=ExtResource("12_cbmm2")]
-position = Vector2(1808, 592)
-
-[node name="Node2D6" parent="." instance=ExtResource("12_cbmm2")]
-position = Vector2(1968, 464)
-
-[node name="Node2D7" parent="." instance=ExtResource("12_cbmm2")]
-position = Vector2(2104, 416)
-
-[node name="Node2D8" parent="." instance=ExtResource("12_cbmm2")]
-position = Vector2(2040, 248)
-
-[node name="Node2D9" parent="." instance=ExtResource("12_cbmm2")]
-position = Vector2(2000, 272)
-
-[node name="Node2D4" parent="." instance=ExtResource("11_7cu6u")]
-position = Vector2(1928, 480)
-
-[node name="Node2D5" parent="." instance=ExtResource("10_od6oc")]
-position = Vector2(2112, 240)

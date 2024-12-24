@@ -36,3 +36,9 @@ func GetInventory() -> Inventory:
 	if result:
 		return result[0]
 	return null
+
+func GetInfoPopup() -> Info:
+	var result = get_tree().get_nodes_in_group("Info")
+	if result:
+		return result[0]
+	return null

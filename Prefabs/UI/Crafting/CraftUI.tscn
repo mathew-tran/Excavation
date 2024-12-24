@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://pcspyqm6p5bb"]
+
+[ext_resource type="PackedScene" uid="uid://ckftdnu76u7wt" path="res://Prefabs/UI/Crafting/CraftButton.tscn" id="1_060l5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwddl"]
+bg_color = Color(0.062622, 0.062622, 0.0626219, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1400, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cwddl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(1300, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -250.0
+offset_right = 650.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "RESEARCH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="CraftButton" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton2" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton3" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton4" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton5" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton6" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton7" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton8" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton9" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton10" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton11" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton12" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton13" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton14" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton15" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2
+
+[node name="CraftButton16" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
+layout_mode = 2

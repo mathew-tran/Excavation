@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://8qh0cw30qc7s"]
+
+[ext_resource type="Texture2D" uid="uid://x1sbcvamdaoq" path="res://Art/Blocking/SmallRocks/SmallRock1.png" id="1_o0t5k"]
+
+[node name="Item" type="VBoxContainer"]
+custom_minimum_size = Vector2(50, 45)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_o0t5k")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "x 20"
+horizontal_alignment = 1

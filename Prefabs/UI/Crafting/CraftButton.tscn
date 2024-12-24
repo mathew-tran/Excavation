@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckftdnu76u7wt"]
+
+[ext_resource type="PackedScene" uid="uid://8qh0cw30qc7s" path="res://Prefabs/UI/Crafting/CraftRequirement.tscn" id="1_1f26g"]
+[ext_resource type="Script" path="res://Scripts/UI/Crafting/CraftButton.gd" id="1_b7fs4"]
+
+[node name="CraftButton" type="Panel"]
+custom_minimum_size = Vector2(300, 200)
+offset_right = 300.0
+offset_bottom = 200.0
+script = ExtResource("1_b7fs4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(280, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -90.0
+offset_right = 140.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Upgrade Title"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 4
+
+[node name="Item" parent="VBoxContainer/GridContainer" instance=ExtResource("1_1f26g")]
+layout_mode = 2
+
+[node name="Item2" parent="VBoxContainer/GridContainer" instance=ExtResource("1_1f26g")]
+layout_mode = 2
+
+[node name="Item3" parent="VBoxContainer/GridContainer" instance=ExtResource("1_1f26g")]
+layout_mode = 2
+
+[node name="Item4" parent="VBoxContainer/GridContainer" instance=ExtResource("1_1f26g")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "PURCHASE"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
