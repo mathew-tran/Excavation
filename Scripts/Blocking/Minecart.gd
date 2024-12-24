@@ -1,9 +1,16 @@
 extends Area2D
 
+@export var bGoHome = false
 
 func _on_area_entered(_area):
-	Finder.GetLevelSelect().Show()
+	if bGoHome:
+		Finder.GetGoHomePopup().Show()
+	else:
+		Finder.GetLevelSelect().Show()
 
 
 func _on_area_exited(_area):
-	Finder.GetLevelSelect().Hide()
+	if bGoHome:
+		Finder.GetGoHomePopup().Hide()
+	else:
+		Finder.GetLevelSelect().Hide()	

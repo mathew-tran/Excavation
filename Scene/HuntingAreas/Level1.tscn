@@ -1,0 +1,229 @@
+[gd_scene load_steps=18 format=3 uid="uid://ku12s7xcc8hc"]
+
+[ext_resource type="PackedScene" uid="uid://b5qq212iv7ss0" path="res://Prefabs/Rocks/Rock.tscn" id="1_oryf5"]
+[ext_resource type="PackedScene" uid="uid://djhdjtw1ljfl2" path="res://Prefabs/Blocking/Boulder4.tscn" id="1_qp1ul"]
+[ext_resource type="PackedScene" uid="uid://c7f7eol1o8f1t" path="res://Prefabs/Blocking/Boulder2.tscn" id="2_l5hlc"]
+[ext_resource type="Script" path="res://Data/MaterialDropChance.gd" id="2_mmim2"]
+[ext_resource type="PackedScene" uid="uid://c3jrdvsowvmi" path="res://Prefabs/Blocking/Boulder3.tscn" id="3_cayfs"]
+[ext_resource type="Resource" uid="uid://cv5blbplmpe3x" path="res://Data/Materials/001_Stone.tres" id="3_qsiqc"]
+[ext_resource type="Resource" uid="uid://buioxgbfobljq" path="res://Data/Materials/003_Iron.tres" id="4_axpje"]
+[ext_resource type="PackedScene" uid="uid://dwrw4xt53lac8" path="res://Prefabs/Blocking/Boulder1.tscn" id="4_vptr7"]
+[ext_resource type="Resource" uid="uid://cvhe2jpmnutdu" path="res://Data/Materials/002_Coal.tres" id="5_4xbfw"]
+[ext_resource type="PackedScene" uid="uid://dg8iyo2ippt3u" path="res://Prefabs/Drops.tscn" id="6_yx3au"]
+[ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="7_pwiuy"]
+[ext_resource type="PackedScene" uid="uid://4wt08pawg5m3" path="res://Prefabs/Blocking/Rail.tscn" id="10_ssv6t"]
+[ext_resource type="PackedScene" uid="uid://cfk0rui35311t" path="res://Prefabs/Blocking/Minecart.tscn" id="13_fj3bp"]
+[ext_resource type="PackedScene" uid="uid://dixk1sgsiq68d" path="res://Prefabs/Blocking/Gate.tscn" id="14_e4vre"]
+
+[sub_resource type="Resource" id="Resource_j7i21"]
+script = ExtResource("2_mmim2")
+MatResource = ExtResource("3_qsiqc")
+DropAmount = 3
+DropRange = 3
+DropChance = 100
+
+[sub_resource type="Resource" id="Resource_uf7au"]
+script = ExtResource("2_mmim2")
+MatResource = ExtResource("4_axpje")
+DropAmount = 0
+DropRange = 3
+DropChance = 50
+
+[sub_resource type="Resource" id="Resource_fnrkd"]
+script = ExtResource("2_mmim2")
+MatResource = ExtResource("5_4xbfw")
+DropAmount = 5
+DropRange = 3
+DropChance = 100
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(292, 325)
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Boulder9" parent="Environment" instance=ExtResource("1_qp1ul")]
+position = Vector2(996, 773)
+
+[node name="Boulder3" parent="Environment" instance=ExtResource("2_l5hlc")]
+position = Vector2(1653, 137)
+
+[node name="Boulder4" parent="Environment" instance=ExtResource("2_l5hlc")]
+position = Vector2(1435, 590)
+
+[node name="Boulder14" parent="Environment" instance=ExtResource("2_l5hlc")]
+position = Vector2(1460, -705)
+
+[node name="Boulder15" parent="Environment" instance=ExtResource("2_l5hlc")]
+position = Vector2(1041, -1044)
+
+[node name="Boulder5" parent="Environment" instance=ExtResource("3_cayfs")]
+position = Vector2(-932, 610)
+
+[node name="Boulder6" parent="Environment" instance=ExtResource("2_l5hlc")]
+position = Vector2(509, 949)
+
+[node name="Boulder7" parent="Environment" instance=ExtResource("2_l5hlc")]
+position = Vector2(12, 960)
+
+[node name="Boulder8" parent="Environment" instance=ExtResource("3_cayfs")]
+position = Vector2(-446, 808)
+
+[node name="Boulder16" parent="Environment" instance=ExtResource("3_cayfs")]
+position = Vector2(615, -1203)
+
+[node name="Boulder17" parent="Environment" instance=ExtResource("3_cayfs")]
+position = Vector2(179, -1327)
+
+[node name="Boulder1" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-924, -754)
+
+[node name="Boulder13" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-785, -1158)
+
+[node name="Boulder18" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-341, -1438)
+
+[node name="Boulder10" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(1639, -296)
+
+[node name="Boulder11" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1076, 114)
+
+[node name="Boulder12" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1335, 362)
+
+[node name="Boulder19" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-977, 923)
+
+[node name="Boulder20" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-310, 1155)
+
+[node name="Boulder21" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(419, 1264)
+
+[node name="Boulder22" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(932, 1149)
+rotation = 2.9777
+
+[node name="Boulder23" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(1426, 839)
+rotation = 2.9777
+
+[node name="Boulder24" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(1754, 377)
+rotation = 2.9777
+
+[node name="Boulder25" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(2066, -154)
+rotation = 2.9777
+
+[node name="Boulder26" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(1887, -672)
+rotation = 2.9777
+
+[node name="Boulder27" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(1492, -1134)
+rotation = 2.9777
+
+[node name="Boulder28" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(1086, -1497)
+rotation = 2.9777
+
+[node name="Boulder29" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(576, -1671)
+rotation = 2.9777
+
+[node name="Boulder30" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(18.0001, -1869)
+rotation = 2.9777
+
+[node name="Boulder31" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-962, -1655)
+rotation = 2.9777
+
+[node name="Boulder32" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1336, -1177)
+rotation = 2.9777
+
+[node name="Boulder33" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1448, -811)
+rotation = 3.98461
+
+[node name="Boulder34" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1544, -555)
+rotation = 3.98461
+
+[node name="Boulder2" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1044, -466)
+
+[node name="Rocks" type="Node2D" parent="."]
+
+[node name="Rock" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(492, -792)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock6" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(860, -706)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock7" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(720, -764)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock8" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(512, 606)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock9" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(238, 678)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock10" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-536, 442)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock11" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-744, 298)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock4" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-485, -816)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock5" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(1251, -91)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
+
+[node name="Rock2" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(787, 416)
+DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_fnrkd")])
+
+[node name="Rock3" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-46, 479)
+
+[node name="Rail" parent="Rocks" instance=ExtResource("10_ssv6t")]
+position = Vector2(-929, -159)
+
+[node name="Rail2" parent="Rocks" instance=ExtResource("10_ssv6t")]
+position = Vector2(-1259, -158)
+
+[node name="Rail4" parent="Rocks" instance=ExtResource("10_ssv6t")]
+position = Vector2(-1580, -157)
+
+[node name="Rail5" parent="Rocks" instance=ExtResource("10_ssv6t")]
+position = Vector2(-1912, -156)
+
+[node name="Rail3" parent="Rocks" instance=ExtResource("10_ssv6t")]
+position = Vector2(-604, -159)
+
+[node name="Drops" parent="." instance=ExtResource("6_yx3au")]
+
+[node name="Player" parent="." instance=ExtResource("7_pwiuy")]
+position = Vector2(-306, -198)
+
+[node name="Minecart" parent="." instance=ExtResource("13_fj3bp")]
+position = Vector2(-532, -203)
+bGoHome = true
+
+[node name="Gate" parent="." instance=ExtResource("14_e4vre")]
+position = Vector2(-975, -162)

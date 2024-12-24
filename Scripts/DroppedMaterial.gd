@@ -10,7 +10,7 @@ var Progress = 0
 
 
 func _ready():
-	$Timer.wait_time = randf_range(.4, .9)
+	$Timer.wait_time = randf_range(.9, 1.2)
 	$Timer.start()
 	
 func Setup(mat : MaterialResource):

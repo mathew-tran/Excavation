@@ -18,6 +18,13 @@ func GetLevelSelect() -> LevelSelect:
 		return result[0]
 	return null
 	
+func GetGoHomePopup() -> GoHomePopup:
+	var result = get_tree().get_nodes_in_group("GoHome")
+	if result:
+		return result[0]
+	return null
+	
+	
 func GetDropsGroup():
 	var result = get_tree().get_nodes_in_group("Drops")
 	if result:
