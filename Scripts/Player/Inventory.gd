@@ -7,12 +7,14 @@ var MaxItemAmount = 12
 var Items : Array[InventorySlot]
 
 signal AddItemAttempt
+signal InventoryLoaded
+
+var bHasBeenLoaded = false
 
 func GetSaveCategory():
 	return "Inventory"
 	
-func _ready():
-	
+func _ready():	
 	for item in range(0, MaxItemAmount):
 		Items.append(InventorySlot.new())
 		
@@ -27,7 +29,10 @@ func _ready():
 				Items[x].ItemType = materialData
 				Items[x].Amount = data["Items"][x]["amount"]
 				Items[x].Update.emit()
-
+				
+	InventoryLoaded.emit()
+	bHasBeenLoaded = true
+	
 func OnSavingData():
 	var data = {
 		"SlotAmount" : MaxItemAmount,
@@ -46,6 +51,18 @@ func GetItemData():
 			subData["amount"] = Items[item].Amount
 			data[item] = subData
 	return data
+	
+func HasItem(ItemType : MaterialResource, amount):
+	for item in Items:
+		if item.ItemType == ItemType:
+			return item.Amount >= amount
+	return false
+	
+func GetItemAmount(ItemType : MaterialResource):
+	for item in Items:
+		if item.ItemType == ItemType:
+			return item.Amount
+	return 0
 	
 func GetMaxItemAmount():
 	return MaxItemAmount
@@ -73,3 +90,14 @@ func AddItem(ItemType : MaterialResource, amount):
 	Finder.GetPlayer().add_child(instance)
 	instance.Setup(ItemType.MaterialName)
 	instance.global_position = Finder.GetPlayer().global_position
+
+func RemoveItem(ItemType: MaterialResource, amount):
+	for item in Items:
+		if item.ItemType == ItemType:
+			item.Amount -= amount
+			if item.Amount == 0:
+				item.ItemType = null
+			item.Update.emit()				
+			break
+	AddItemAttempt.emit()
+	SaveManager.Save()

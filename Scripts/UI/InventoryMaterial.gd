@@ -15,10 +15,17 @@ func Setup(inventorySlot : InventorySlot):
 	
 	
 func OnUpdate():
-	$HBoxContainer/HBoxContainer/Amount.text = str(InventorySlotReference.Amount)
-	$HBoxContainer/TextureRect.texture = InventorySlotReference.ItemType.MaterialImage
-	SlotInfoText = InventorySlotReference.ItemType.MaterialName
-	Show()
+	if InventorySlotReference.ItemType == null:
+		$HBoxContainer/TextureRect.texture = null
+		SlotInfoText = "EMPTY"
+		
+		$HBoxContainer/HBoxContainer/Amount.text = ""
+		Hide()
+	else:
+		$HBoxContainer/HBoxContainer/Amount.text = str(InventorySlotReference.Amount)
+		$HBoxContainer/TextureRect.texture = InventorySlotReference.ItemType.MaterialImage
+		SlotInfoText = InventorySlotReference.ItemType.MaterialName
+		Show()
 	
 func Show():
 	$HBoxContainer/TextureRect.visible = true

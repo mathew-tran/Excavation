@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CraftResource" load_steps=5 format=3 uid="uid://bt2xhur8il26r"]
+
+[ext_resource type="Script" path="res://Data/Crafts/CraftResource.gd" id="1_54dhu"]
+[ext_resource type="Script" path="res://Data/Crafts/CraftRequirement.gd" id="1_yemer"]
+[ext_resource type="Resource" uid="uid://cv5blbplmpe3x" path="res://Data/Materials/001_Stone.tres" id="2_716yu"]
+
+[sub_resource type="Resource" id="Resource_3srxr"]
+script = ExtResource("1_yemer")
+MaterialType = ExtResource("2_716yu")
+MaterialAmount = 3
+
+[resource]
+script = ExtResource("1_54dhu")
+Title = "Research Pick Axe Strength"
+Description = "Increase Pick Axe Strength by 10%"
+CraftID = "000"
+Requirements = Array[ExtResource("1_yemer")]([SubResource("Resource_3srxr")])
