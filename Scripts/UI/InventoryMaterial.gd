@@ -33,7 +33,6 @@ func Hide():
 func _on_h_box_container_mouse_entered():
 	$Panel.visible = true
 	$HBoxContainer/Info.visible = true
-	Finder.GetPlayer().DisablePlayerControls()
 
 func _on_h_box_container_mouse_exited():
 	$Panel.visible = false

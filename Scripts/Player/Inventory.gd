@@ -69,3 +69,7 @@ func AddItem(ItemType : MaterialResource, amount):
 			break
 	AddItemAttempt.emit()	
 	SaveManager.Save()
+	var instance = load("res://Prefabs/UI/PickupText.tscn").instantiate()
+	Finder.GetPlayer().add_child(instance)
+	instance.Setup(ItemType.MaterialName)
+	instance.global_position = Finder.GetPlayer().global_position

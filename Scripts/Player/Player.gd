@@ -83,11 +83,7 @@ func MoveToMouse():
 	MoveObjectReference.global_position = get_global_mouse_position()	
 	SetTarget(MoveObjectReference)
 	MoveObjectReference.Show()
-	#
-#func _integrate_forces(state):
-	#if linear_velocity.length() > 1000:
-		#linear_velocity = linear_velocity.normalized() * 1000
-	
+
 func MoveTowardsTarget(delta):
 	if is_instance_valid(CurrentTarget) == false:
 		GoIdle()

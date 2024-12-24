@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1ig2bfgcjehm"]
+[gd_scene load_steps=15 format=3 uid="uid://d1ig2bfgcjehm"]
 
 [ext_resource type="Texture2D" uid="uid://caj0yakxgqubc" path="res://Art/Player/PlayerType1.png" id="1_l2a7s"]
 [ext_resource type="Texture2D" uid="uid://c4sbxfo2xjeo4" path="res://Art/Player/PlayerType1Hand.png" id="2_m0kra"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c8d84ldryvtte" path="res://Art/Player/PlayerType1Thumb.png" id="6_fhcsd"]
 [ext_resource type="PackedScene" uid="uid://by5ov8qkjuud7" path="res://Prefabs/PlayerUI.tscn" id="7_b7eq4"]
 [ext_resource type="Script" path="res://Scripts/Player/Inventory.gd" id="8_p1ibi"]
+[ext_resource type="PackedScene" uid="uid://si4mr5koso7l" path="res://Prefabs/MagnetField.tscn" id="9_o1hdc"]
 
 [sub_resource type="Animation" id="Animation_73jw6"]
 length = 0.001
@@ -135,5 +136,7 @@ script = ExtResource("8_p1ibi")
 
 [node name="MoveCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0quke")
+
+[node name="MagnetField" parent="." instance=ExtResource("9_o1hdc")]
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]

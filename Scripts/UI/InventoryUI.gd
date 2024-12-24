@@ -20,8 +20,8 @@ func InitializeInventory():
 		instance.Setup(invSlot)
 	
 func _on_mouse_entered():
-	Finder.GetPlayer().DisablePlayerControls()
+	pass
 
 
 func _on_mouse_exited():
-	Finder.GetPlayer().EnablePlayerControls()
+	pass
