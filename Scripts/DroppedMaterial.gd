@@ -18,7 +18,7 @@ func Setup(mat : MaterialResource):
 	texture = MaterialDrop.MaterialImage
 	var angle = randf() * 2 * PI
 	Velocity = Vector2(cos(angle), sin(angle)).normalized()
-	Velocity *= randf_range(150, 210)
+	Velocity *= randf_range(150, 210) * 1.2
 	if randi_range(0, 10) >= 5:
 		Velocity *= -1
 	
