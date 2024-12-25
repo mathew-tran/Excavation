@@ -13,6 +13,7 @@ var bCanBeMagnetized = true
 func _ready():
 	$Timer.wait_time = randf_range(.3, .6)
 	$Timer.start()
+	$AnimationPlayer.play("animate")
 	
 func Setup(mat : MaterialResource):
 	MaterialDrop = mat

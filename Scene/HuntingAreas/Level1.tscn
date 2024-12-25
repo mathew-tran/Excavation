@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://ku12s7xcc8hc"]
+[gd_scene load_steps=19 format=3 uid="uid://ku12s7xcc8hc"]
 
+[ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_cnl7t"]
 [ext_resource type="PackedScene" uid="uid://b5qq212iv7ss0" path="res://Prefabs/Rocks/Rock.tscn" id="1_oryf5"]
 [ext_resource type="PackedScene" uid="uid://djhdjtw1ljfl2" path="res://Prefabs/Blocking/Boulder4.tscn" id="1_qp1ul"]
 [ext_resource type="PackedScene" uid="uid://c7f7eol1o8f1t" path="res://Prefabs/Blocking/Boulder2.tscn" id="2_l5hlc"]
@@ -40,6 +41,10 @@ DropChance = 100
 position = Vector2(292, 325)
 
 [node name="Environment" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment"]
+scale = Vector2(80, 80)
+texture = ExtResource("1_cnl7t")
 
 [node name="Boulder9" parent="Environment" instance=ExtResource("1_qp1ul")]
 position = Vector2(996, 773)

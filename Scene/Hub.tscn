@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdsdbdlxtshha"]
+[gd_scene load_steps=14 format=3 uid="uid://cdsdbdlxtshha"]
 
 [ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="1_0waba"]
+[ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_wddsl"]
 [ext_resource type="PackedScene" uid="uid://dwrw4xt53lac8" path="res://Prefabs/Blocking/Boulder1.tscn" id="2_4esxx"]
 [ext_resource type="PackedScene" uid="uid://c7f7eol1o8f1t" path="res://Prefabs/Blocking/Boulder2.tscn" id="2_lht2q"]
 [ext_resource type="PackedScene" uid="uid://c3jrdvsowvmi" path="res://Prefabs/Blocking/Boulder3.tscn" id="3_5kge5"]
@@ -16,6 +17,10 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Environment" type="Node2D" parent="."]
+
+[node name="Ground" type="Sprite2D" parent="Environment"]
+scale = Vector2(80, 80)
+texture = ExtResource("1_wddsl")
 
 [node name="Node2D4" parent="Environment" instance=ExtResource("11_7cu6u")]
 position = Vector2(1928, 480)
