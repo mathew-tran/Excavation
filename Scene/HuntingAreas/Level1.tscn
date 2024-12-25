@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ku12s7xcc8hc"]
+[gd_scene load_steps=20 format=3 uid="uid://ku12s7xcc8hc"]
 
 [ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_cnl7t"]
 [ext_resource type="PackedScene" uid="uid://b5qq212iv7ss0" path="res://Prefabs/Rocks/Rock.tscn" id="1_oryf5"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://buioxgbfobljq" path="res://Data/Materials/003_Iron.tres" id="4_axpje"]
 [ext_resource type="PackedScene" uid="uid://dwrw4xt53lac8" path="res://Prefabs/Blocking/Boulder1.tscn" id="4_vptr7"]
 [ext_resource type="Resource" uid="uid://cvhe2jpmnutdu" path="res://Data/Materials/002_Coal.tres" id="5_4xbfw"]
+[ext_resource type="Script" path="res://Scripts/Tutorial/FirstTimeMining.gd" id="6_b5hg3"]
 [ext_resource type="PackedScene" uid="uid://dg8iyo2ippt3u" path="res://Prefabs/Drops.tscn" id="6_yx3au"]
 [ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="7_pwiuy"]
 [ext_resource type="PackedScene" uid="uid://4wt08pawg5m3" path="res://Prefabs/Blocking/Rail.tscn" id="10_ssv6t"]
@@ -160,6 +161,9 @@ rotation = 3.98461
 
 [node name="Boulder2" parent="Environment" instance=ExtResource("4_vptr7")]
 position = Vector2(-1044, -466)
+
+[node name="FirstTimeMining" type="Node" parent="Environment"]
+script = ExtResource("6_b5hg3")
 
 [node name="Rocks" type="Node2D" parent="."]
 
