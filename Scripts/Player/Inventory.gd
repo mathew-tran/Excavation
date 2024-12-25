@@ -2,7 +2,7 @@ extends Node
 
 class_name Inventory
 
-var MaxItemAmount = 12
+var MaxItemAmount = 2
 
 var Items : Array[InventorySlot]
 
@@ -70,20 +70,43 @@ func GetMaxItemAmount():
 func GetItems():
 	return Items
 
-func CanAddItem():
-	return true
+func HasFreeSlots():
+	for item in Items:
+		if item.ItemType == null:
+			return true
+	return false
+	
+func CanAddItem(ItemType: MaterialResource):
+	if CheckItemInSlot(ItemType) != -1:
+		return true
+	
+	if HasFreeSlots():
+		return true
+		
+	return false
+	
+func CheckItemInSlot(ItemType: MaterialResource) ->int :
+	for index in range(0, len(Items)):
+		if Items[index].ItemType == ItemType:
+			return index
+	return -1
 	
 func AddItem(ItemType : MaterialResource, amount):
-	for item in Items:
-		if item.ItemType == ItemType:
-			item.Amount += amount
-			item.Update.emit()
-			break
-		elif item.ItemType == null:
-			item.ItemType = ItemType
-			item.Amount = amount
-			item.Update.emit()
-			break
+	
+	var existingSlot = CheckItemInSlot(ItemType)
+	if existingSlot == - 1:
+		for index in range(0, len(Items)):
+			if Items[index].ItemType == null:
+				Items[index].ItemType = ItemType
+				Items[index].Amount = amount
+				Items[index].Update.emit()
+				break
+		
+	else:
+	
+		Items[existingSlot].Amount += amount
+		Items[existingSlot].Update.emit()
+		
 	AddItemAttempt.emit()	
 	SaveManager.Save()
 	var instance = load("res://Prefabs/UI/PickupText.tscn").instantiate()

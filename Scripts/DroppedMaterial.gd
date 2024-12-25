@@ -8,6 +8,7 @@ var Velocity = Vector2.ZERO
 var Progress = 0
 
 var bMagnetized = false
+var bCanBeMagnetized = true
 
 func _ready():
 	$Timer.wait_time = randf_range(.3, .6)
@@ -23,6 +24,8 @@ func Setup(mat : MaterialResource):
 		Velocity *= -1
 	
 func Magnetize():
+	if bCanBeMagnetized == false:
+		return
 	if bMagnetized == false:
 		$MagnetizedTimer.start()
 		bMagnetized = true
@@ -44,9 +47,13 @@ func PickupItem():
 	if bCanPickup == false:
 		return
 	bCanPickup = false
-	Finder.GetInventory().AddItem(MaterialDrop, 1)
-	
-	queue_free()
+	if Finder.GetInventory().CanAddItem(MaterialDrop):
+		Finder.GetInventory().AddItem(MaterialDrop, 1)	
+		queue_free()
+	else:
+		bMagnetized = false
+		$MagnetizedTimer.stop()
+		bCanBeMagnetized = false
 
 func _on_area_2d_area_entered(area):
 	PickupItem()
