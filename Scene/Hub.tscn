@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdsdbdlxtshha"]
+[gd_scene load_steps=15 format=3 uid="uid://cdsdbdlxtshha"]
 
 [ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="1_0waba"]
 [ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_wddsl"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://261a2cyrk7in" path="res://Prefabs/Blocking/SmallRocks/SmallRock1.tscn" id="10_od6oc"]
 [ext_resource type="PackedScene" uid="uid://dt1yh0v3y3fc7" path="res://Prefabs/Blocking/SmallRocks/SmallRock2.tscn" id="11_7cu6u"]
 [ext_resource type="PackedScene" uid="uid://blfsybl38vdpe" path="res://Prefabs/Blocking/SmallRocks/SmallRock3.tscn" id="12_cbmm2"]
+[ext_resource type="Script" path="res://Scripts/Tutorial/FirstTimeStartup.gd" id="14_okj1i"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -188,3 +189,6 @@ position = Vector2(2144, 336)
 
 [node name="Minecart" parent="." instance=ExtResource("8_a3vq5")]
 position = Vector2(1776, 288)
+
+[node name="FirstTimeStartup" type="Node" parent="."]
+script = ExtResource("14_okj1i")

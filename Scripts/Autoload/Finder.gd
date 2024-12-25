@@ -42,3 +42,9 @@ func GetInfoPopup() -> Info:
 	if result:
 		return result[0]
 	return null
+
+func GetMessageBox() -> MessageBox:
+	var result = get_tree().get_nodes_in_group("MessageBox")
+	if result:
+		return result[0]
+	return null

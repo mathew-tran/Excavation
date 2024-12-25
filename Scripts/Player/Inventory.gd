@@ -2,7 +2,7 @@ extends Node
 
 class_name Inventory
 
-var MaxItemAmount = 2
+var MaxItemAmount = 9
 
 var Items : Array[InventorySlot]
 
