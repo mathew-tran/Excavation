@@ -13,6 +13,11 @@ func _ready():
 	flip_v = randi_range(0, 1)
 	
 func TakeDamage(amount):
+	var instance = load("res://Prefabs/UI/DamageText.tscn").instantiate()
+	
+	instance.Setup(amount)
+	Finder.GetDropsGroup().add_child(instance)
+	instance.global_position = global_position
 	Health -= amount
 	
 	if Health <= 0:

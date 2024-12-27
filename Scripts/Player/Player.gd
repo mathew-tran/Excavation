@@ -131,11 +131,15 @@ func CompleteToolSwing():
 	ToolHasSwung.emit()
 	if is_instance_valid(CurrentTarget):
 		if CurrentTarget is Rock:
-			CurrentTarget.TakeDamage(PickDamage)
+			CurrentTarget.TakeDamage(PickDamage + snappedf(randf_range(.1, .8), .01))
+			$AudioStreamPlayer2D.pitch_scale = randf_range(.9,1.8)
+			$AudioStreamPlayer2D.play()
 			
 		await get_tree().create_timer(.1).timeout
 		if is_instance_valid(CurrentTarget) == false:
 			StopSwingingTool()
+			$RockBreak.pitch_scale = randf_range(.9, 1.2)
+			$RockBreak.play()
 			
 	else:
 		StopSwingingTool()
@@ -159,3 +163,16 @@ func _on_area_2d_area_entered(area):
 	if area is Door:
 		area.Enter()
 	pass # Replace with function body.
+
+
+func _on_voice_timer_timeout():
+	var voices = ["res://Audio/Hum01.wav", "res://Audio/Hum02.wav", "res://Audio/Hum03.wav", "res://Audio/Hum04.wav", "res://Audio/Hum05.wav"]
+	$Voice.stream = load(voices[randi() % len(voices)])
+	$Voice.play()
+	$VoiceTimer.stop()
+	
+
+
+func _on_voice_finished():
+	$VoiceTimer.wait_time = randf_range(15, 30)
+	$VoiceTimer.start()

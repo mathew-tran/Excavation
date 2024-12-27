@@ -107,6 +107,8 @@ func AddItem(ItemType : MaterialResource, amount):
 		Items[existingSlot].Amount += amount
 		Items[existingSlot].Update.emit()
 		
+	$AudioStreamPlayer2D.pitch_scale = randf_range(.9, 1.6)
+	$AudioStreamPlayer2D.play()
 	AddItemAttempt.emit()	
 	SaveManager.Save()
 	var instance = load("res://Prefabs/UI/PickupText.tscn").instantiate()

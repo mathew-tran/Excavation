@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1ig2bfgcjehm"]
+[gd_scene load_steps=17 format=3 uid="uid://d1ig2bfgcjehm"]
 
 [ext_resource type="Texture2D" uid="uid://caj0yakxgqubc" path="res://Art/Player/PlayerType1.png" id="1_l2a7s"]
 [ext_resource type="Texture2D" uid="uid://c4sbxfo2xjeo4" path="res://Art/Player/PlayerType1Hand.png" id="2_m0kra"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://by13f6kts8s02" path="res://Art/Player/PlayerType1Fingers.png" id="5_ygvtp"]
 [ext_resource type="Texture2D" uid="uid://c8d84ldryvtte" path="res://Art/Player/PlayerType1Thumb.png" id="6_fhcsd"]
 [ext_resource type="PackedScene" uid="uid://by5ov8qkjuud7" path="res://Prefabs/PlayerUI.tscn" id="7_b7eq4"]
-[ext_resource type="Script" path="res://Scripts/Player/Inventory.gd" id="8_p1ibi"]
+[ext_resource type="PackedScene" uid="uid://d1vtc4xkbjo0q" path="res://Prefabs/PlayerInventory.tscn" id="8_qifov"]
 [ext_resource type="PackedScene" uid="uid://si4mr5koso7l" path="res://Prefabs/MagnetField.tscn" id="9_o1hdc"]
+[ext_resource type="AudioStream" uid="uid://d01ebv4ucjdew" path="res://Audio/Mine01.wav" id="10_bq2ih"]
+[ext_resource type="AudioStream" uid="uid://cty57oxx7j0th" path="res://Audio/RockBreak.wav" id="11_psrgf"]
 
 [sub_resource type="Animation" id="Animation_73jw6"]
 length = 0.001
@@ -131,12 +133,24 @@ horizontal_alignment = 1
 [node name="CanvasLayer" parent="Player" instance=ExtResource("7_b7eq4")]
 visible = false
 
-[node name="Inventory" type="Node" parent="Player" groups=["Inventory"]]
-script = ExtResource("8_p1ibi")
+[node name="Inventory" parent="Player" instance=ExtResource("8_qifov")]
 
 [node name="MoveCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0quke")
 
 [node name="MagnetField" parent="." instance=ExtResource("9_o1hdc")]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_bq2ih")
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="."]
+
+[node name="VoiceTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="RockBreak" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_psrgf")
+
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
+[connection signal="finished" from="Voice" to="." method="_on_voice_finished"]
+[connection signal="timeout" from="VoiceTimer" to="." method="_on_voice_timer_timeout"]
