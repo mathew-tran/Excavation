@@ -12,7 +12,8 @@ func OnLoadedData():
 	if Data == null:
 		Data = {
 			"Entitlements" : {},
-			"QuestProgression" : {}
+			"QuestProgression" : {},
+			"Stats" : {}
 		}
 	
 func OnSavingData():
@@ -24,3 +25,14 @@ func HasEntitlement(entitlementName):
 func SetEntitlement(entitlementName, value):
 	Data["Entitlements"][entitlementName] = value
 	
+func IncrementStat(statType, amount):
+	if Data["Stats"].has(statType):
+		Data["Stats"][statType] += amount
+	else:
+		Data["Stats"][statType] = amount
+
+func HasStat(statType):
+	return Data["Stats"].has(statType)
+	
+func GetStatValue(statType):
+	return Data["Stats"][statType]

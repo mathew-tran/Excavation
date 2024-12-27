@@ -14,6 +14,8 @@ func _ready():
 		var currentCraft = null
 		if currentTrack.bUnlockedByDefault:
 			currentCraft = currentTrack.GetNextCraft()
+		if currentTrack.IsUnlocked():
+			currentCraft = currentTrack.GetNextCraft()
 		AttemptCreateNextCraft(currentCraft, currentTrack)
 			
 func AttemptCreateNextCraft(craft, track):

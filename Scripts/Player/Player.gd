@@ -22,6 +22,9 @@ var MoveObjectReference : MoveObject
 
 var bCanAction = true
 
+var PickDamage = 2
+
+
 func DisablePlayerControls():
 	bCanAction = false
 
@@ -35,9 +38,15 @@ func _ready():
 	await get_tree().process_frame
 	SaveManager.Load()
 	
-	if Progression.HasEntitlement("MINING_SPEED_1"):
-		IncreaseMiningSpeed(10.1)
-
+	var damage = load("res://Data/Stats/STAT_AttackDamage.tres") as StatResource
+	
+	if Progression.HasStat(damage.StatName):
+		PickDamage += Progression.GetStatValue(damage.StatName)
+	
+	var speed = load("res://Data/Stats/STAT_MoveSpeed.tres") as StatResource
+	if Progression.HasStat(speed.StatName):
+		Speed += Progression.GetStatValue(speed.StatName)
+		
 func IncreaseMiningSpeed(amount):
 	$Player/AnimationPlayer.speed_scale *= amount
 	
@@ -122,7 +131,7 @@ func CompleteToolSwing():
 	ToolHasSwung.emit()
 	if is_instance_valid(CurrentTarget):
 		if CurrentTarget is Rock:
-			CurrentTarget.TakeDamage(2)
+			CurrentTarget.TakeDamage(PickDamage)
 			
 		await get_tree().create_timer(.1).timeout
 		if is_instance_valid(CurrentTarget) == false:

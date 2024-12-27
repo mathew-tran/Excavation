@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CraftResource" load_steps=9 format=3 uid="uid://f60vov12g8w7"]
+
+[ext_resource type="Script" path="res://Data/Crafts/CraftRequirement.gd" id="1_mnf1a"]
+[ext_resource type="Resource" uid="uid://cvhe2jpmnutdu" path="res://Data/Materials/002_Coal.tres" id="2_21cgy"]
+[ext_resource type="Script" path="res://Data/Crafts/CraftReward.gd" id="3_dsyu0"]
+[ext_resource type="Resource" uid="uid://6f1yof1sbdic" path="res://Data/Stats/STAT_MoveSpeed.tres" id="4_5207i"]
+[ext_resource type="Script" path="res://Data/Crafts/CraftReward_StatIncrease.gd" id="5_7ch13"]
+[ext_resource type="Script" path="res://Data/Crafts/CraftResource.gd" id="6_6mxxi"]
+
+[sub_resource type="Resource" id="Resource_fqrg5"]
+script = ExtResource("1_mnf1a")
+MaterialType = ExtResource("2_21cgy")
+MaterialAmount = 40
+
+[sub_resource type="Resource" id="Resource_qnuni"]
+script = ExtResource("5_7ch13")
+Amount = 10.0
+StatRes = ExtResource("4_5207i")
+
+[resource]
+script = ExtResource("6_6mxxi")
+Title = "Research Move Speed"
+Description = "Increase Move Speed by 10"
+CraftID = "003"
+Requirements = Array[ExtResource("1_mnf1a")]([SubResource("Resource_fqrg5")])
+Rewards = Array[ExtResource("3_dsyu0")]([SubResource("Resource_qnuni")])

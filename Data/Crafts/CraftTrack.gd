@@ -13,3 +13,6 @@ func GetNextCraft():
 		if Progression.HasEntitlement(TrackName + craft.CraftID) == false:
 			return craft
 	return null
+
+func IsUnlocked():
+	return Progression.HasEntitlement(TrackName)

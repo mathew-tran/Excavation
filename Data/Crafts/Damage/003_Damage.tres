@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CraftResource" load_steps=9 format=3 uid="uid://s5t524qjafw6"]
+
+[ext_resource type="Script" path="res://Data/Crafts/CraftRequirement.gd" id="1_w67m0"]
+[ext_resource type="Resource" uid="uid://cv5blbplmpe3x" path="res://Data/Materials/001_Stone.tres" id="2_amvwg"]
+[ext_resource type="Script" path="res://Data/Crafts/CraftReward.gd" id="3_xdttl"]
+[ext_resource type="Resource" uid="uid://smjdta8d33rk" path="res://Data/Stats/STAT_AttackDamage.tres" id="4_qrno7"]
+[ext_resource type="Script" path="res://Data/Crafts/CraftReward_StatIncrease.gd" id="5_enmhi"]
+[ext_resource type="Script" path="res://Data/Crafts/CraftResource.gd" id="6_3xmsp"]
+
+[sub_resource type="Resource" id="Resource_3srxr"]
+script = ExtResource("1_w67m0")
+MaterialType = ExtResource("2_amvwg")
+MaterialAmount = 24
+
+[sub_resource type="Resource" id="Resource_r0li7"]
+script = ExtResource("5_enmhi")
+Amount = 0.5
+StatRes = ExtResource("4_qrno7")
+
+[resource]
+script = ExtResource("6_3xmsp")
+Title = "Research Pick Axe Strength"
+Description = "Increase Pick Axe Strength by .5"
+CraftID = "003"
+Requirements = Array[ExtResource("1_w67m0")]([SubResource("Resource_3srxr")])
+Rewards = Array[ExtResource("3_xdttl")]([SubResource("Resource_r0li7")])
