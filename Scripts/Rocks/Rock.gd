@@ -24,6 +24,7 @@ func TakeDamage(amount):
 		for drop in DropChances.MaterialsToDrop:
 			drop.Open(global_position)
 		queue_free()
+		return
 	else:
 		var result = randi_range(0, 1)
 		if result == 0:
@@ -31,7 +32,12 @@ func TakeDamage(amount):
 		else:
 			$AnimationPlayer.play("hit2")
 	
-
+	material = load("res://Materials/RockHit.tres")
+	$HitTimer.start()
 
 func _on_button_button_up():
 	Finder.GetPlayer().SetTarget(self)
+
+
+func _on_hit_timer_timeout():
+	material = null
