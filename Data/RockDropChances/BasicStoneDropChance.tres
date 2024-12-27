@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="RockDropChance" load_steps=9 format=3 uid="uid://d0eev7fauvuru"]
+
+[ext_resource type="Script" path="res://Data/MaterialDropChance.gd" id="1_rcacj"]
+[ext_resource type="Resource" uid="uid://cv5blbplmpe3x" path="res://Data/Materials/001_Stone.tres" id="2_4gbwi"]
+[ext_resource type="Script" path="res://Data/RockDropChance.gd" id="2_m1wys"]
+[ext_resource type="Resource" uid="uid://cvhe2jpmnutdu" path="res://Data/Materials/002_Coal.tres" id="3_qnxy0"]
+[ext_resource type="Resource" uid="uid://buioxgbfobljq" path="res://Data/Materials/003_Iron.tres" id="4_jtbsx"]
+
+[sub_resource type="Resource" id="Resource_a5mqg"]
+script = ExtResource("1_rcacj")
+MatResource = ExtResource("2_4gbwi")
+DropAmount = 1
+DropRange = 3
+DropChance = 80
+
+[sub_resource type="Resource" id="Resource_i448l"]
+script = ExtResource("1_rcacj")
+MatResource = ExtResource("3_qnxy0")
+DropAmount = 1
+DropRange = 2
+DropChance = 30
+
+[sub_resource type="Resource" id="Resource_wvqkv"]
+script = ExtResource("1_rcacj")
+MatResource = ExtResource("4_jtbsx")
+DropAmount = 1
+DropRange = 1
+DropChance = 10
+
+[resource]
+script = ExtResource("2_m1wys")
+MaterialsToDrop = Array[ExtResource("1_rcacj")]([SubResource("Resource_a5mqg"), SubResource("Resource_i448l"), SubResource("Resource_wvqkv")])

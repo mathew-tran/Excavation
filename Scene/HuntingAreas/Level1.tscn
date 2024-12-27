@@ -1,42 +1,19 @@
-[gd_scene load_steps=20 format=3 uid="uid://ku12s7xcc8hc"]
+[gd_scene load_steps=15 format=3 uid="uid://ku12s7xcc8hc"]
 
 [ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_cnl7t"]
 [ext_resource type="PackedScene" uid="uid://b5qq212iv7ss0" path="res://Prefabs/Rocks/Rock.tscn" id="1_oryf5"]
 [ext_resource type="PackedScene" uid="uid://djhdjtw1ljfl2" path="res://Prefabs/Blocking/Boulder4.tscn" id="1_qp1ul"]
 [ext_resource type="PackedScene" uid="uid://c7f7eol1o8f1t" path="res://Prefabs/Blocking/Boulder2.tscn" id="2_l5hlc"]
-[ext_resource type="Script" path="res://Data/MaterialDropChance.gd" id="2_mmim2"]
 [ext_resource type="PackedScene" uid="uid://c3jrdvsowvmi" path="res://Prefabs/Blocking/Boulder3.tscn" id="3_cayfs"]
-[ext_resource type="Resource" uid="uid://cv5blbplmpe3x" path="res://Data/Materials/001_Stone.tres" id="3_qsiqc"]
-[ext_resource type="Resource" uid="uid://buioxgbfobljq" path="res://Data/Materials/003_Iron.tres" id="4_axpje"]
 [ext_resource type="PackedScene" uid="uid://dwrw4xt53lac8" path="res://Prefabs/Blocking/Boulder1.tscn" id="4_vptr7"]
-[ext_resource type="Resource" uid="uid://cvhe2jpmnutdu" path="res://Data/Materials/002_Coal.tres" id="5_4xbfw"]
 [ext_resource type="Script" path="res://Scripts/Tutorial/FirstTimeMining.gd" id="6_b5hg3"]
 [ext_resource type="PackedScene" uid="uid://dg8iyo2ippt3u" path="res://Prefabs/Drops.tscn" id="6_yx3au"]
 [ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="7_pwiuy"]
+[ext_resource type="PackedScene" uid="uid://bm3x7inu8rqq5" path="res://Prefabs/Rocks/CoalRock.tscn" id="9_2w1nr"]
+[ext_resource type="PackedScene" uid="uid://b8deq6sggrbi0" path="res://Prefabs/Rocks/IronRock.tscn" id="10_d1tij"]
 [ext_resource type="PackedScene" uid="uid://4wt08pawg5m3" path="res://Prefabs/Blocking/Rail.tscn" id="10_ssv6t"]
 [ext_resource type="PackedScene" uid="uid://cfk0rui35311t" path="res://Prefabs/Blocking/Minecart.tscn" id="13_fj3bp"]
 [ext_resource type="PackedScene" uid="uid://dixk1sgsiq68d" path="res://Prefabs/Blocking/Gate.tscn" id="14_e4vre"]
-
-[sub_resource type="Resource" id="Resource_j7i21"]
-script = ExtResource("2_mmim2")
-MatResource = ExtResource("3_qsiqc")
-DropAmount = 3
-DropRange = 3
-DropChance = 100
-
-[sub_resource type="Resource" id="Resource_uf7au"]
-script = ExtResource("2_mmim2")
-MatResource = ExtResource("4_axpje")
-DropAmount = 0
-DropRange = 3
-DropChance = 50
-
-[sub_resource type="Resource" id="Resource_fnrkd"]
-script = ExtResource("2_mmim2")
-MatResource = ExtResource("5_4xbfw")
-DropAmount = 5
-DropRange = 3
-DropChance = 100
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(292, 325)
@@ -169,43 +146,33 @@ script = ExtResource("6_b5hg3")
 
 [node name="Rock" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(492, -792)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock6" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(860, -706)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock7" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(720, -764)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock8" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(512, 606)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock9" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(238, 678)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock10" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(-536, 442)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock11" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(-744, 298)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock4" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(-485, -816)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock5" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(1251, -91)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_j7i21"), SubResource("Resource_uf7au")])
 
 [node name="Rock2" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(787, 416)
-DropChances = Array[ExtResource("2_mmim2")]([SubResource("Resource_fnrkd")])
 
 [node name="Rock3" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(-46, 479)
@@ -224,6 +191,21 @@ position = Vector2(-1912, -156)
 
 [node name="Rail3" parent="Rocks" instance=ExtResource("10_ssv6t")]
 position = Vector2(-604, -159)
+
+[node name="Rock12" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(463, -303)
+
+[node name="Rock13" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(145, -530)
+
+[node name="Rock14" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(-371, -1124)
+
+[node name="Rock15" parent="Rocks" instance=ExtResource("10_d1tij")]
+position = Vector2(1133, -725)
+
+[node name="Rock16" parent="Rocks" instance=ExtResource("10_d1tij")]
+position = Vector2(1124, 422)
 
 [node name="Drops" parent="." instance=ExtResource("6_yx3au")]
 
