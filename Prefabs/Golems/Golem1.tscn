@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj4y0tfhkxx6r"]
+
+[ext_resource type="Texture2D" uid="uid://6p6614osto5j" path="res://Art/Golem/Golem1.png" id="1_18juy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3nwt"]
+size = Vector2(800, 100)
+
+[node name="Golem" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_18juy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v3nwt")

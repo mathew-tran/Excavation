@@ -27,6 +27,8 @@ var PickDamage = 2
 
 func DisablePlayerControls():
 	bCanAction = false
+	GoIdle()
+	
 
 func EnablePlayerControls():
 	bCanAction = true

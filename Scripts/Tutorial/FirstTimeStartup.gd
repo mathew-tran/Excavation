@@ -13,6 +13,9 @@ func _ready():
 	Finder.GetMessageBox().ShowMessage("Welcome Miner!", title)
 	await Finder.GetMessageBox().MessageComplete
 	
+	Finder.GetMessageBox().ShowMessage("Your goal is to get to the bottom of the mines!", title)
+	await Finder.GetMessageBox().MessageComplete
+	
 	Finder.GetMessageBox().ShowMessage("To your right is the minecart, you can use that to go to places to mine for materials", title)
 	await Finder.GetMessageBox().MessageComplete
 	
