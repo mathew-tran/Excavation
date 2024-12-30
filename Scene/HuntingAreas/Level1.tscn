@@ -30,7 +30,7 @@ script = ExtResource("1_3qq3s")
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment"]
-scale = Vector2(80, 80)
+scale = Vector2(5000, 5000)
 texture = ExtResource("1_cnl7t")
 
 [node name="Boulder9" parent="Environment" instance=ExtResource("1_qp1ul")]
@@ -139,7 +139,11 @@ position = Vector2(391, -2269)
 rotation = 2.9777
 
 [node name="Boulder35" parent="Environment" instance=ExtResource("4_vptr7")]
-position = Vector2(431, -2695)
+position = Vector2(-98, -2458)
+rotation = 2.9777
+
+[node name="Boulder46" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-705, -2488)
 rotation = 2.9777
 
 [node name="Boulder30" parent="Environment" instance=ExtResource("4_vptr7")]
@@ -150,8 +154,76 @@ rotation = 2.9777
 position = Vector2(-962, -1655)
 rotation = 2.9777
 
+[node name="Boulder47" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1140, -2815)
+rotation = 2.9777
+
+[node name="Boulder48" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1352, -3225)
+rotation = 2.9777
+
+[node name="Boulder49" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1796, -3214)
+rotation = 2.9777
+
+[node name="Boulder50" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1406, -4084)
+rotation = 2.9777
+
+[node name="Boulder52" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-1715, -4464)
+rotation = 2.9777
+
+[node name="Boulder53" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-2186, -4646)
+rotation = 2.9777
+
+[node name="Boulder54" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-2748, -4680)
+rotation = 2.9777
+
+[node name="Boulder55" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-3105, -4320)
+rotation = 2.9777
+
+[node name="Boulder56" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-3277, -3879)
+rotation = 2.9777
+
+[node name="Boulder57" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-3237, -3492)
+rotation = 2.9777
+
+[node name="Boulder58" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-3059, -3135)
+rotation = 2.9777
+
+[node name="Boulder59" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-2662, -2926)
+rotation = 2.9777
+
+[node name="Boulder60" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-2063, -2936)
+rotation = 2.9777
+
+[node name="Boulder51" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-987, -4278)
+rotation = 2.9777
+
 [node name="Boulder39" parent="Environment" instance=ExtResource("4_vptr7")]
-position = Vector2(575, -3125)
+position = Vector2(628, -3380)
+rotation = 2.9777
+
+[node name="Boulder43" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(109, -3685)
+rotation = 2.9777
+
+[node name="Boulder44" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-226, -4025)
+rotation = 2.9777
+
+[node name="Boulder45" parent="Environment" instance=ExtResource("4_vptr7")]
+position = Vector2(-609, -4151)
 rotation = 2.9777
 
 [node name="Boulder32" parent="Environment" instance=ExtResource("4_vptr7")]
@@ -186,8 +258,44 @@ script = ExtResource("6_b5hg3")
 [node name="Rock" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(492, -792)
 
+[node name="Rock28" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-333, -2716)
+
+[node name="Rock29" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-742, -2815)
+
+[node name="Rock30" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-960, -3147)
+
+[node name="Rock31" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-1024, -3451)
+
+[node name="Rock32" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-1008, -3942)
+
+[node name="Rock33" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-595, -3859)
+
+[node name="Rock34" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(-269, -3756)
+
+[node name="Rock35" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(261, -3413)
+
 [node name="Rock6" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(860, -706)
+
+[node name="Rock17" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(1214, -1467)
+
+[node name="Rock18" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(1181, -1776)
+
+[node name="Rock19" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(560, -1964)
+
+[node name="Rock20" parent="Rocks" instance=ExtResource("1_oryf5")]
+position = Vector2(508, -1598)
 
 [node name="Rock7" parent="Rocks" instance=ExtResource("1_oryf5")]
 position = Vector2(720, -764)
@@ -237,11 +345,41 @@ position = Vector2(463, -303)
 [node name="Rock13" parent="Rocks" instance=ExtResource("9_2w1nr")]
 position = Vector2(145, -530)
 
+[node name="Rock25" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(826, -2474)
+
+[node name="Rock36" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(-561, -3287)
+
+[node name="Rock37" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(-602, -3452)
+
+[node name="Rock38" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(-434, -3366)
+
+[node name="Rock26" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(1419, -2554)
+
+[node name="Rock27" parent="Rocks" instance=ExtResource("9_2w1nr")]
+position = Vector2(1021, -1425)
+
 [node name="Rock14" parent="Rocks" instance=ExtResource("9_2w1nr")]
 position = Vector2(-371, -1124)
 
 [node name="Rock15" parent="Rocks" instance=ExtResource("10_d1tij")]
 position = Vector2(1133, -725)
+
+[node name="Rock21" parent="Rocks" instance=ExtResource("10_d1tij")]
+position = Vector2(1516, -3303)
+
+[node name="Rock24" parent="Rocks" instance=ExtResource("10_d1tij")]
+position = Vector2(1616, -3489)
+
+[node name="Rock22" parent="Rocks" instance=ExtResource("10_d1tij")]
+position = Vector2(1407, -3458)
+
+[node name="Rock23" parent="Rocks" instance=ExtResource("10_d1tij")]
+position = Vector2(1252, -3294)
 
 [node name="Rock16" parent="Rocks" instance=ExtResource("10_d1tij")]
 position = Vector2(1124, 422)
