@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cdsdbdlxtshha"]
+[gd_scene load_steps=16 format=3 uid="uid://cdsdbdlxtshha"]
 
 [ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="1_0waba"]
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_abqlf"]
 [ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_wddsl"]
 [ext_resource type="PackedScene" uid="uid://dwrw4xt53lac8" path="res://Prefabs/Blocking/Boulder1.tscn" id="2_4esxx"]
 [ext_resource type="PackedScene" uid="uid://c7f7eol1o8f1t" path="res://Prefabs/Blocking/Boulder2.tscn" id="2_lht2q"]
@@ -15,7 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://blfsybl38vdpe" path="res://Prefabs/Blocking/SmallRocks/SmallRock3.tscn" id="12_cbmm2"]
 [ext_resource type="Script" path="res://Scripts/Tutorial/FirstTimeStartup.gd" id="14_okj1i"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
+script = ExtResource("1_abqlf")
 
 [node name="Environment" type="Node2D" parent="."]
 

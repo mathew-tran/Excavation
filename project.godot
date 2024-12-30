@@ -21,6 +21,7 @@ Finder="*res://Scripts/Autoload/Finder.gd"
 Helper="*res://Scripts/Autoload/Helper.gd"
 SaveManager="*res://Scripts/Autoload/SaveManager.gd"
 Progression="*res://Scripts/Autoload/Progression.gd"
+Transition="*res://Prefabs/UI/Transition.tscn"
 
 [display]
 

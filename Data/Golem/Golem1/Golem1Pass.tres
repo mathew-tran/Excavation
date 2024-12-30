@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GolemDialogue" load_steps=2 format=3 uid="uid://ceurct8gt41f4"]
+
+[ext_resource type="Script" path="res://Data/Golem/GolemDialogue.gd" id="1_2j8k4"]
+
+[resource]
+script = ExtResource("1_2j8k4")
+Sentences = Array[String](["THOSE WERE TASTY.", "THANKS FOR SPARING ME SOME.", "I WILL GET OUT OF THE WAY.", "SEE YOU AROUND."])

@@ -12,11 +12,11 @@ func Setup(craftReq : CraftRequirement):
 	OnInventoryUpdate()
 
 func OnInventoryUpdate():
-	if DoesMeetRequirement() == false:
+	if  CraftReq.DoesMeetRequirement() == false:
 		$NoMeetRequirement.text = "(" + str(Finder.GetInventory().GetItemAmount(CraftReq.MaterialType)) + ")"
 		$NoMeetRequirement.visible = true
 	else:
 		$NoMeetRequirement.visible = false
 		
 func DoesMeetRequirement():
-	return Finder.GetInventory().HasItem(CraftReq.MaterialType, CraftReq.MaterialAmount)
+	return CraftReq.DoesMeetRequirement()

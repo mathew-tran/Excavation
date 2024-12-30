@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CraftRequirement" load_steps=3 format=3 uid="uid://proof3uamn3q"]
+
+[ext_resource type="Script" path="res://Data/Crafts/CraftRequirement.gd" id="1_5wb0d"]
+[ext_resource type="Resource" uid="uid://cv5blbplmpe3x" path="res://Data/Materials/001_Stone.tres" id="1_k777m"]
+
+[resource]
+script = ExtResource("1_5wb0d")
+MaterialType = ExtResource("1_k777m")
+MaterialAmount = 1

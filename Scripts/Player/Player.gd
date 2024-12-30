@@ -34,6 +34,7 @@ func EnablePlayerControls():
 	bCanAction = true
 	
 func _ready():
+	
 	lock_rotation = true
 	MoveObjectReference = load("res://Prefabs/MoveObject.tscn").instantiate()
 	get_parent().call_deferred("add_child", MoveObjectReference)
@@ -160,11 +161,6 @@ func GoIdle():
 	RunAI()
 	MoveObjectReference.Hide()
 	StopSwingingTool()
-
-func _on_area_2d_area_entered(area):
-	if area is Door:
-		area.Enter()
-	pass # Replace with function body.
 
 
 func _on_voice_timer_timeout():

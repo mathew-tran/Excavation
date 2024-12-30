@@ -16,7 +16,7 @@ func ShowMessage(content, contentTitle = ""):
 func _input(event):
 	if bIsInMessage == false:
 		return
-	if event.is_action_released("click"):		
+	if event.is_action_pressed("click"):		
 		bIsInMessage = false
 		visible = false
 		await get_tree().create_timer(.1).timeout

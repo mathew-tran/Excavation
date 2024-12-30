@@ -1,6 +1,5 @@
-[gd_scene load_steps=23 format=3 uid="uid://ku12s7xcc8hc"]
+[gd_scene load_steps=17 format=3 uid="uid://ku12s7xcc8hc"]
 
-[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_3qq3s"]
 [ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_cnl7t"]
 [ext_resource type="PackedScene" uid="uid://b5qq212iv7ss0" path="res://Prefabs/Rocks/Rock.tscn" id="1_oryf5"]
 [ext_resource type="PackedScene" uid="uid://djhdjtw1ljfl2" path="res://Prefabs/Blocking/Boulder4.tscn" id="1_qp1ul"]
@@ -13,19 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://bm3x7inu8rqq5" path="res://Prefabs/Rocks/CoalRock.tscn" id="9_2w1nr"]
 [ext_resource type="PackedScene" uid="uid://b8deq6sggrbi0" path="res://Prefabs/Rocks/IronRock.tscn" id="10_d1tij"]
 [ext_resource type="PackedScene" uid="uid://4wt08pawg5m3" path="res://Prefabs/Blocking/Rail.tscn" id="10_ssv6t"]
-[ext_resource type="Resource" uid="uid://56w620pspngp" path="res://Data/Golem/Golem1/Golem1Start.tres" id="12_l7jjo"]
 [ext_resource type="PackedScene" uid="uid://cfk0rui35311t" path="res://Prefabs/Blocking/Minecart.tscn" id="13_fj3bp"]
-[ext_resource type="Resource" uid="uid://ceurct8gt41f4" path="res://Data/Golem/Golem1/Golem1Pass.tres" id="13_riph8"]
-[ext_resource type="Resource" uid="uid://q3jdbic4jfkg" path="res://Data/Golem/Golem1/Golem1Fail.tres" id="14_cbjwx"]
 [ext_resource type="PackedScene" uid="uid://dixk1sgsiq68d" path="res://Prefabs/Blocking/Gate.tscn" id="14_e4vre"]
 [ext_resource type="PackedScene" uid="uid://cj4y0tfhkxx6r" path="res://Prefabs/Golems/Golem1.tscn" id="15_tfbcr"]
-[ext_resource type="Resource" uid="uid://proof3uamn3q" path="res://Data/Golem/Golem1/Golem1Requirement.tres" id="15_v535m"]
 [ext_resource type="PackedScene" uid="uid://bniaafdw74hpx" path="res://Prefabs/DialogueTriggers/FirstTimeGolemDialogue.tscn" id="16_n7fr8"]
-[ext_resource type="Resource" uid="uid://c1jn3u5ucft1w" path="res://Data/Golem/Golem1/Golem1Entitlement.tres" id="16_pi8dt"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(292, 325)
-script = ExtResource("1_3qq3s")
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -248,11 +241,6 @@ position = Vector2(1124, 422)
 
 [node name="Golem" parent="." instance=ExtResource("15_tfbcr")]
 position = Vector2(628, -1175)
-InitialSentence = ExtResource("12_l7jjo")
-PassSentence = ExtResource("13_riph8")
-FailSentence = ExtResource("14_cbjwx")
-Requirement = ExtResource("15_v535m")
-Entitlement = ExtResource("16_pi8dt")
 
 [node name="Drops" parent="." instance=ExtResource("6_yx3au")]
 

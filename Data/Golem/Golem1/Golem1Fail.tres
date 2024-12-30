@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GolemDialogue" load_steps=2 format=3 uid="uid://q3jdbic4jfkg"]
+
+[ext_resource type="Script" path="res://Data/Golem/GolemDialogue.gd" id="1_ntjlh"]
+
+[resource]
+script = ExtResource("1_ntjlh")
+Sentences = Array[String](["...", "IT SEEMS YOU DO NOT HAVE 200 STONES.", "I CANNOT MOVE, BUT IF YOU GIVE ME 200 STONES TO EAT, I CAN GET OUT OF THE WAY."])
