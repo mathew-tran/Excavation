@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="CraftTrack" load_steps=6 format=3 uid="uid://jjonpvtuj2pd"]
+[gd_resource type="Resource" script_class="CraftTrack" load_steps=7 format=3 uid="uid://jjonpvtuj2pd"]
 
 [ext_resource type="Script" path="res://Data/Crafts/CraftResource.gd" id="1_weo66"]
 [ext_resource type="Script" path="res://Data/Crafts/CraftTrack.gd" id="2_3mgq3"]
 [ext_resource type="Resource" uid="uid://q1gyj0r64hfc" path="res://Data/Crafts/MoveSpeed/001_MoveSpeed.tres" id="2_kgxkq"]
 [ext_resource type="Resource" uid="uid://c2agnfax7xw21" path="res://Data/Crafts/MoveSpeed/002_MoveSpeed.tres" id="3_gc20e"]
 [ext_resource type="Resource" uid="uid://f60vov12g8w7" path="res://Data/Crafts/MoveSpeed/003_MoveSpeed.tres" id="4_msevc"]
+[ext_resource type="Resource" uid="uid://c0crmtvypy0q6" path="res://Data/Crafts/MoveSpeed/004_MoveSpeed.tres" id="5_bvssx"]
 
 [resource]
 script = ExtResource("2_3mgq3")
 TrackName = "MoveSpeed"
-Crafts = Array[ExtResource("1_weo66")]([ExtResource("2_kgxkq"), ExtResource("3_gc20e"), ExtResource("4_msevc")])
+Crafts = Array[ExtResource("1_weo66")]([ExtResource("2_kgxkq"), ExtResource("3_gc20e"), ExtResource("4_msevc"), ExtResource("5_bvssx")])
 bUnlockedByDefault = false
