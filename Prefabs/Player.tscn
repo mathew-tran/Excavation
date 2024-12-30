@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1ig2bfgcjehm"]
+[gd_scene load_steps=18 format=3 uid="uid://d1ig2bfgcjehm"]
 
 [ext_resource type="Texture2D" uid="uid://caj0yakxgqubc" path="res://Art/Player/PlayerType1.png" id="1_l2a7s"]
 [ext_resource type="Texture2D" uid="uid://c4sbxfo2xjeo4" path="res://Art/Player/PlayerType1Hand.png" id="2_m0kra"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://si4mr5koso7l" path="res://Prefabs/MagnetField.tscn" id="9_o1hdc"]
 [ext_resource type="AudioStream" uid="uid://d01ebv4ucjdew" path="res://Audio/Mine01.wav" id="10_bq2ih"]
 [ext_resource type="AudioStream" uid="uid://cty57oxx7j0th" path="res://Audio/RockBreak.wav" id="11_psrgf"]
+[ext_resource type="Texture2D" uid="uid://d32tuo35so3cb" path="res://Art/Blocking/Light/LightRadius.png" id="12_oa0a8"]
 
 [sub_resource type="Animation" id="Animation_73jw6"]
 length = 0.001
@@ -150,6 +151,11 @@ autostart = true
 
 [node name="RockBreak" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_psrgf")
+
+[node name="PlayerLight" type="PointLight2D" parent="."]
+blend_mode = 2
+texture = ExtResource("12_oa0a8")
+texture_scale = 2.5
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
 [connection signal="finished" from="Voice" to="." method="_on_voice_finished"]

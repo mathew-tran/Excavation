@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LightResource" load_steps=2 format=3 uid="uid://donqtvr3eyqvt"]
+
+[ext_resource type="Script" path="res://Data/Lighting/LightingResource.gd" id="1_rvnnh"]
+
+[resource]
+script = ExtResource("1_rvnnh")
+LightColor = Color(0, 0.18428, 0.1309, 1)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdsdbdlxtshha"]
+[gd_scene load_steps=18 format=3 uid="uid://cdsdbdlxtshha"]
 
 [ext_resource type="PackedScene" uid="uid://d1ig2bfgcjehm" path="res://Prefabs/Player.tscn" id="1_0waba"]
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_abqlf"]
 [ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_wddsl"]
 [ext_resource type="PackedScene" uid="uid://dwrw4xt53lac8" path="res://Prefabs/Blocking/Boulder1.tscn" id="2_4esxx"]
 [ext_resource type="PackedScene" uid="uid://c7f7eol1o8f1t" path="res://Prefabs/Blocking/Boulder2.tscn" id="2_lht2q"]
+[ext_resource type="Resource" uid="uid://b3f7i54ljt34x" path="res://Data/Lighting/HomeLighting.tres" id="2_u1olp"]
 [ext_resource type="PackedScene" uid="uid://c3jrdvsowvmi" path="res://Prefabs/Blocking/Boulder3.tscn" id="3_5kge5"]
 [ext_resource type="PackedScene" uid="uid://djhdjtw1ljfl2" path="res://Prefabs/Blocking/Boulder4.tscn" id="4_7udps"]
 [ext_resource type="PackedScene" uid="uid://4wt08pawg5m3" path="res://Prefabs/Blocking/Rail.tscn" id="5_xv7fs"]
@@ -15,9 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://dt1yh0v3y3fc7" path="res://Prefabs/Blocking/SmallRocks/SmallRock2.tscn" id="11_7cu6u"]
 [ext_resource type="PackedScene" uid="uid://blfsybl38vdpe" path="res://Prefabs/Blocking/SmallRocks/SmallRock3.tscn" id="12_cbmm2"]
 [ext_resource type="Script" path="res://Scripts/Tutorial/FirstTimeStartup.gd" id="14_okj1i"]
+[ext_resource type="PackedScene" uid="uid://b6qp8xn5wmcc" path="res://Prefabs/Blocking/Torch.tscn" id="17_wj57r"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_abqlf")
+LightColor = ExtResource("2_u1olp")
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -194,3 +197,15 @@ position = Vector2(1776, 288)
 
 [node name="FirstTimeStartup" type="Node" parent="."]
 script = ExtResource("14_okj1i")
+
+[node name="Torch" parent="." instance=ExtResource("17_wj57r")]
+position = Vector2(1728, 696)
+
+[node name="Torch2" parent="." instance=ExtResource("17_wj57r")]
+position = Vector2(1688, 40)
+
+[node name="Torch3" parent="." instance=ExtResource("17_wj57r")]
+position = Vector2(704, 104)
+
+[node name="Torch4" parent="." instance=ExtResource("17_wj57r")]
+position = Vector2(1112, 103)

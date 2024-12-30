@@ -11,6 +11,7 @@
 script = ExtResource("1_u2se8")
 
 [node name="Inventory" parent="." instance=ExtResource("2_p1x8q")]
+light_mask = 0
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -20,15 +21,18 @@ grow_horizontal = 0
 
 [node name="LevelSelect" parent="." instance=ExtResource("3_e4aoh")]
 visible = false
+light_mask = 0
 
 [node name="GoHomePopup" parent="." instance=ExtResource("4_x8pjw")]
 visible = false
+light_mask = 0
 
 [node name="TOPLEVEL" type="CanvasLayer" parent="."]
 layer = 128
 
 [node name="MessageBox" parent="TOPLEVEL" instance=ExtResource("5_2etxp")]
 visible = false
+light_mask = 0
 anchors_preset = 4
 anchor_left = 0.0
 anchor_right = 0.0
@@ -38,6 +42,7 @@ grow_horizontal = 1
 
 [node name="InfoLabel" parent="TOPLEVEL" instance=ExtResource("5_40fge")]
 visible = false
+light_mask = 0
 z_index = 4096
 z_as_relative = false
 offset_right = 400.0
