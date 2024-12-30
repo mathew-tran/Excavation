@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_ntjlh")
-Sentences = Array[String](["...", "IT SEEMS YOU DO NOT HAVE 200 STONES.", "I CANNOT MOVE, BUT IF YOU GIVE ME 200 STONES TO EAT, I CAN GET OUT OF THE WAY."])
+Sentences = Array[String](["...", "IT SEEMS YOU DO NOT HAVE 25 STONES.", "I CANNOT MOVE, BUT IF YOU GIVE ME 25 STONES TO EAT, I CAN GET OUT OF THE WAY."])

@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("1_5wb0d")
 MaterialType = ExtResource("1_k777m")
-MaterialAmount = 1
+MaterialAmount = 25
