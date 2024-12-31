@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://pcspyqm6p5bb"]
+[gd_scene load_steps=5 format=3 uid="uid://pcspyqm6p5bb"]
 
 [ext_resource type="PackedScene" uid="uid://ckftdnu76u7wt" path="res://Prefabs/UI/Crafting/CraftButton.tscn" id="1_060l5"]
 [ext_resource type="Script" path="res://Scripts/UI/Crafting/CraftUI.gd" id="1_nqqfs"]
+[ext_resource type="PackedScene" uid="uid://cpw1vvgksaitj" path="res://Prefabs/UI/StatsWindow.tscn" id="3_tettx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwddl"]
 bg_color = Color(0.062622, 0.062622, 0.0626219, 1)
@@ -69,3 +70,5 @@ layout_mode = 2
 
 [node name="CraftButton2" parent="Panel/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("1_060l5")]
 layout_mode = 2
+
+[node name="StatsWindow" parent="." instance=ExtResource("3_tettx")]

@@ -4,6 +4,7 @@ var Data = {}
 
 signal SavingData
 signal DataLoaded
+signal DataSaved
 
 var SaveFile = "user://excavation.save"
 
@@ -28,6 +29,7 @@ func Save(bGetData = true):
 		saveFile.store_var(Data)
 	saveFile.close()
 	
+	DataSaved.emit()
 	# Save it to file.
 	
 func _input(event):
