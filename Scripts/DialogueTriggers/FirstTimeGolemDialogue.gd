@@ -10,7 +10,7 @@ func _on_area_entered(area):
 	
 	
 	Finder.GetPlayer().DisablePlayerControls()
-	var title = ""
+	var title = "NOTE"
 	
 	
 	Finder.GetMessageBox().ShowMessage("This is a golem.", title)

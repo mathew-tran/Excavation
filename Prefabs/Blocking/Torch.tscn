@@ -46,6 +46,7 @@ texture = ExtResource("1_4dodt")
 script = ExtResource("2_ma3am")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 0.333333, 1)
 blend_mode = 2
 texture = ExtResource("2_y3ei6")
 texture_scale = 6.0

@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_rvnnh")
-LightColor = Color(0, 0.18428, 0.1309, 1)
+LightColor = Color(0.803716, 1, 0.918569, 1)

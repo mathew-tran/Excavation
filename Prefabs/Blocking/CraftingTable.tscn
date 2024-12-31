@@ -1,8 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtivhvglbli13"]
+[gd_scene load_steps=7 format=3 uid="uid://dtivhvglbli13"]
 
 [ext_resource type="Script" path="res://Scripts/Blocking/CraftingTable.gd" id="1_c3ys8"]
 [ext_resource type="Texture2D" uid="uid://tk6hj47mhbku" path="res://Art/Blocking/CraftingTable.png" id="1_crqdw"]
 [ext_resource type="PackedScene" uid="uid://pcspyqm6p5bb" path="res://Prefabs/UI/Crafting/CraftUI.tscn" id="2_1liae"]
+[ext_resource type="Shader" path="res://Shader/Interactable.gdshader" id="2_h5y6y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lv3kw"]
+shader = ExtResource("2_h5y6y")
+shader_parameter/size_effect = 0.5
+shader_parameter/speed = 0.2
+shader_parameter/highlight_strength = 0.2
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jni4y"]
 size = Vector2(337, 87)
@@ -11,6 +20,7 @@ size = Vector2(337, 87)
 script = ExtResource("1_c3ys8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lv3kw")
 texture = ExtResource("1_crqdw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

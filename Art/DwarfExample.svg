@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2"
-     inkscape:cx="435.5"
-     inkscape:cy="957.25"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="1183.6968"
+     inkscape:cy="655.84154"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-7"
@@ -600,6 +600,15 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <circle
+       style="fill:#ffffff;stroke-width:0.178205;stroke-linecap:round"
+       id="path46"
+       cx="166.15834"
+       cy="323.45309"
+       r="18.38854"
+       inkscape:export-filename="Blocking\Light\LightRadius.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <circle
        style="fill:#9593a7;stroke-width:0.111887;stroke-linecap:round"
        id="circle101"
@@ -1646,7 +1655,7 @@
        cy="57.78701"
        r="4.2796531" />
     <rect
-       style="fill:#361e16;fill-opacity:1;stroke-width:0.1;stroke-linecap:round"
+       style="fill:#291103;fill-opacity:1;stroke-width:0.1;stroke-linecap:round"
        id="rect100"
        width="31.75"
        height="31.220833"
@@ -1757,7 +1766,10 @@
     <path
        style="fill:#63342f;stroke-width:0.1;stroke-linecap:round"
        d="m 136.9489,269.03352 c -0.74835,1.3096 0.56127,12.9091 0.56127,12.9091 l 2.05798,-13.47039 z"
-       id="path35" />
+       id="path35"
+       inkscape:export-filename="Blocking\Torch.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#e11800;stroke-width:0.126316;stroke-linecap:round"
        id="path44"

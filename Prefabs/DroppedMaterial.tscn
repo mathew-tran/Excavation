@@ -44,7 +44,7 @@ _data = {
 }
 
 [node name="DroppedMaterial" type="Sprite2D"]
-light_mask = 0
+light_mask = 2
 visibility_layer = 2
 scale = Vector2(2, 2)
 texture = ExtResource("1_7n3wn")

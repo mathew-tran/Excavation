@@ -10,3 +10,9 @@ script = ExtResource("1_clmn8")
 z_index = 2000
 z_as_relative = false
 texture = ExtResource("1_sa3fs")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 5.0
+blend_mode = 1
+range_item_cull_mask = 0
+texture = ExtResource("1_sa3fs")

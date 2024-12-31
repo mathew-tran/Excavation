@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ku12s7xcc8hc"]
+[gd_scene load_steps=24 format=3 uid="uid://ku12s7xcc8hc"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_3qq3s"]
 [ext_resource type="Texture2D" uid="uid://dcyfo3a6cixi8" path="res://Art/Blocking/GroundTexture/Ground1.png" id="1_cnl7t"]
@@ -23,7 +23,6 @@
 [ext_resource type="Resource" uid="uid://proof3uamn3q" path="res://Data/Golem/Golem1/Golem1Requirement.tres" id="15_v535m"]
 [ext_resource type="PackedScene" uid="uid://bniaafdw74hpx" path="res://Prefabs/DialogueTriggers/FirstTimeGolemDialogue.tscn" id="16_n7fr8"]
 [ext_resource type="Resource" uid="uid://c1jn3u5ucft1w" path="res://Data/Golem/Golem1/Golem1Entitlement.tres" id="16_pi8dt"]
-[ext_resource type="PackedScene" uid="uid://b6qp8xn5wmcc" path="res://Prefabs/Blocking/Torch.tscn" id="24_je6cb"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(292, 325)
@@ -408,9 +407,3 @@ bGoHome = true
 position = Vector2(-975, -162)
 
 [node name="FirstTimeGolemDialogue" parent="." instance=ExtResource("16_n7fr8")]
-
-[node name="Torch" parent="." instance=ExtResource("24_je6cb")]
-position = Vector2(783, -1017)
-
-[node name="Torch2" parent="." instance=ExtResource("24_je6cb")]
-position = Vector2(783, -1017)
