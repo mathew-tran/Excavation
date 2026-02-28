@@ -1,11 +1,11 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 class_name Player
 
 signal ToolHasSwung
 
 var CurrentTarget : Node2D
-var Speed = 15000
+var Speed = 12000
 
 enum STATE {
 	NULL,
@@ -24,7 +24,6 @@ var bCanAction = true
 
 var PickDamage = 2
 
-
 func DisablePlayerControls():
 	bCanAction = false
 	GoIdle()
@@ -34,8 +33,6 @@ func EnablePlayerControls():
 	bCanAction = true
 	
 func _ready():
-	
-	lock_rotation = true
 	MoveObjectReference = load("res://Prefabs/MoveObject.tscn").instantiate()
 	get_parent().call_deferred("add_child", MoveObjectReference)
 	await get_tree().process_frame
@@ -69,10 +66,12 @@ func _process(_delta):
 			MoveToMouse()
 	
 func _physics_process(delta):
+	
 	if CurrentState == STATE.MOVE_TOWARDS_TARGET:
 		MoveTowardsTarget(delta)
 	else:
-		linear_velocity = Vector2.ZERO
+		velocity *= .60
+	move_and_slide()
 	
 func RunAI():		
 	if CurrentState == STATE.IDLE or CurrentState == STATE.SLEEP:
@@ -102,6 +101,7 @@ func MoveToMouse():
 	SetTarget(MoveObjectReference)
 	MoveObjectReference.Show()
 
+
 func MoveTowardsTarget(delta):
 	if is_instance_valid(CurrentTarget) == false:
 		GoIdle()
@@ -113,7 +113,9 @@ func MoveTowardsTarget(delta):
 	else:
 		$Player.scale = Vector2(1,1)
 	
-	linear_velocity = direction * Speed * delta
+	
+	velocity = direction * Speed * delta
+
 
 	var bIsCloseToObject = false
 	if global_position.distance_to(CurrentTarget.global_position) < 30:

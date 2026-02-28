@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="CraftResource" load_steps=9 format=3 uid="uid://c0crmtvypy0q6"]
+[gd_resource type="Resource" script_class="CraftResource" format=3 uid="uid://c0crmtvypy0q6"]
 
-[ext_resource type="Script" path="res://Data/Crafts/CraftRequirement.gd" id="1_vr884"]
+[ext_resource type="Script" uid="uid://cfhmm6f1n0ief" path="res://Data/Crafts/CraftRequirement.gd" id="1_vr884"]
 [ext_resource type="Resource" uid="uid://cvhe2jpmnutdu" path="res://Data/Materials/002_Coal.tres" id="2_fdxrm"]
-[ext_resource type="Script" path="res://Data/Crafts/CraftReward.gd" id="3_pouvm"]
+[ext_resource type="Script" uid="uid://clqtknfadwmn7" path="res://Data/Crafts/CraftReward.gd" id="3_pouvm"]
 [ext_resource type="Resource" uid="uid://6f1yof1sbdic" path="res://Data/Stats/STAT_MoveSpeed.tres" id="4_xsblu"]
-[ext_resource type="Script" path="res://Data/Crafts/CraftReward_StatIncrease.gd" id="5_qpps3"]
-[ext_resource type="Script" path="res://Data/Crafts/CraftResource.gd" id="6_732pl"]
+[ext_resource type="Script" uid="uid://c4hw8oc0i3n0k" path="res://Data/Crafts/CraftReward_StatIncrease.gd" id="5_qpps3"]
+[ext_resource type="Script" uid="uid://c7lw73gkxxh5i" path="res://Data/Crafts/CraftResource.gd" id="6_732pl"]
 
 [sub_resource type="Resource" id="Resource_fqrg5"]
 script = ExtResource("1_vr884")
