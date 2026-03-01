@@ -10,7 +10,17 @@ func _ready() -> void:
 	HealthLeft = StartingHealth
 	SetFrame()
 	
+func Heal():
+	HealthLeft += .25
+	$Timer.wait_time *= .50
+	SetFrame()
+	if HealthLeft >= StartingHealth:
+		queue_free()
+	
+	
 func Hit(amount):
+	$Timer.wait_time = .75
+	$Timer.start()
 	HealthLeft -= amount
 	SetFrame()
 	if HealthLeft <= 0:
@@ -27,3 +37,7 @@ func SetFrame():
 	var newFrame = lerp(0, maxFrames, 1 - healthRate)
 	
 	frame = int(newFrame)
+
+
+func _on_timer_timeout() -> void:
+	Heal()

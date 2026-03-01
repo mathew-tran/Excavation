@@ -42,3 +42,9 @@ animations = [{
 [node name="Health" type="AnimatedSprite2D" unique_id=218940041]
 sprite_frames = SubResource("SpriteFrames_50glp")
 script = ExtResource("2_4c4ow")
+
+[node name="Timer" type="Timer" parent="." unique_id=78212264]
+wait_time = 0.75
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

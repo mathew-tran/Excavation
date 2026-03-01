@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dn0f32dn1ybcw"]
+
+[ext_resource type="Texture2D" uid="uid://18mvjulnceu5" path="res://Art/Particle/GroundParticle.png" id="1_85tt7"]
+[ext_resource type="Script" uid="uid://qg8wcgn7muou" path="res://Scripts/HitParticle.gd" id="2_mmisk"]
+
+[sub_resource type="Curve" id="Curve_mmisk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.19728923), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="HitParticle" type="CPUParticles2D" unique_id=1405423196]
+emitting = false
+texture = ExtResource("1_85tt7")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 400)
+initial_velocity_max = 300.0
+scale_amount_curve = SubResource("Curve_mmisk")
+script = ExtResource("2_mmisk")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

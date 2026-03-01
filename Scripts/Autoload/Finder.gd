@@ -12,3 +12,6 @@ func GetCrosshair() -> CrossHair:
 func GetBlockHealthGroup() -> BlockHealthGroup:
 	return get_tree().get_nodes_in_group("BlockHealthGroup")[0]
 	
+func GetFXGroup():
+	return get_tree().get_nodes_in_group("FXGroup")[0]
+	
