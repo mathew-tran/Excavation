@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="StatResource" load_steps=2 format=3 uid="uid://6f1yof1sbdic"]
-
-[ext_resource type="Script" path="res://Data/Stats/StatResource.gd" id="1_8gveo"]
-
-[resource]
-script = ExtResource("1_8gveo")
-StatName = "MoveSpeed"

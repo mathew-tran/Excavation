@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="EntitlementResource" load_steps=2 format=3 uid="uid://b6xc6s5nw67hj"]
-
-[ext_resource type="Script" path="res://Data/Entitlements/EntitlementResource.gd" id="1_420tc"]
-
-[resource]
-script = ExtResource("1_420tc")
-EntitlementID = "MINING_SPEED_1"

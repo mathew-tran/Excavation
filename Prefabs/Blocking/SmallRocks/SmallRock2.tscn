@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt1yh0v3y3fc7"]
-
-[ext_resource type="Texture2D" uid="uid://de28gbvdncvve" path="res://Art/Blocking/SmallRocks/SmallRock2.png" id="1_mestb"]
-
-[node name="Node2D" type="Sprite2D"]
-texture = ExtResource("1_mestb")
