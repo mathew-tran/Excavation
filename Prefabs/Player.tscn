@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjivb1wt536db"]
+
+[ext_resource type="Texture2D" uid="uid://dx2kv58kiw4t3" path="res://Art/Player/PlayerHead.png" id="1_x3d5u"]
+[ext_resource type="PackedScene" uid="uid://c1p5pawa1ia1f" path="res://Prefabs/AxeHand.tscn" id="2_b43ah"]
+[ext_resource type="Script" uid="uid://b584wjxrswwnf" path="res://Scripts/Player.gd" id="2_shmu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b43ah"]
+size = Vector2(60, 60)
+
+[node name="Player" type="CharacterBody2D" unique_id=1354152897]
+script = ExtResource("2_shmu5")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=627750597]
+texture = ExtResource("1_x3d5u")
+
+[node name="Hand" parent="Sprite" unique_id=719789392 instance=ExtResource("2_b43ah")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=615663382]
+shape = SubResource("RectangleShape2D_b43ah")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=84377794]

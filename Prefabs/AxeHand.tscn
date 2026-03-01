@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c1p5pawa1ia1f"]
+
+[ext_resource type="Script" uid="uid://c45scu8tkv1pd" path="res://Scripts/Hand.gd" id="1_8nmpu"]
+[ext_resource type="Texture2D" uid="uid://drva1a7cxeka" path="res://Art/Player/PickAxe.png" id="1_ctcd0"]
+
+[sub_resource type="Animation" id="Animation_ctcd0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5411258]
+}
+
+[sub_resource type="Animation" id="Animation_8nmpu"]
+resource_name = "swing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.5411258, 1.2234758056480255, -1.5411258]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"AttemptHit"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ame2i"]
+_data = {
+&"RESET": SubResource("Animation_ctcd0"),
+&"swing": SubResource("Animation_8nmpu")
+}
+
+[node name="Hand" type="Node2D" unique_id=719789392]
+rotation = -1.5411258
+script = ExtResource("1_8nmpu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=240630209]
+position = Vector2(0, -43.925)
+texture = ExtResource("1_ctcd0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=191520616]
+libraries/ = SubResource("AnimationLibrary_ame2i")
