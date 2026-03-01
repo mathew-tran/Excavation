@@ -6,3 +6,9 @@ func GetMiningLayer() -> TileMapLayer:
 func GetPlayer() -> Player:
 	return get_tree().get_nodes_in_group("Player")[0]
 	
+func GetCrosshair() -> CrossHair:
+	return get_tree().get_nodes_in_group("Crosshair")[0]
+	
+func GetBlockHealthGroup() -> BlockHealthGroup:
+	return get_tree().get_nodes_in_group("BlockHealthGroup")[0]
+	

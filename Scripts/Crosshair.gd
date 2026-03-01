@@ -1,5 +1,7 @@
 extends Sprite2D
 
+class_name CrossHair
+
 var PlayerRef : Player
 
 func _ready() -> void:
@@ -15,3 +17,10 @@ func _process(delta: float) -> void:
 	else:
 		modulate = Color.WHITE
 	global_position = newPosition
+
+func AttemptToBreak():
+	var hitPosition = global_position
+	if hitPosition.distance_to(Finder.GetPlayer().global_position) > Finder.GetPlayer().EffectivenessRange:
+		return
+	Finder.GetBlockHealthGroup().AttemptToMinePosition(hitPosition, 1)
+	

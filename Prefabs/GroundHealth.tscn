@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cr2pcq2wlg6dq"]
+
+[ext_resource type="Texture2D" uid="uid://d0hfwuejb8gi" path="res://Art/Ground/BreakingSprite.png" id="1_kh28b"]
+[ext_resource type="Script" uid="uid://bh5u5sacvpok4" path="res://Scripts/GroundHealth.gd" id="2_4c4ow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgh2o"]
+atlas = ExtResource("1_kh28b")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbw6q"]
+atlas = ExtResource("1_kh28b")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1gob"]
+atlas = ExtResource("1_kh28b")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw32o"]
+atlas = ExtResource("1_kh28b")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50glp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgh2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbw6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1gob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw32o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Health" type="AnimatedSprite2D" unique_id=218940041]
+sprite_frames = SubResource("SpriteFrames_50glp")
+script = ExtResource("2_4c4ow")
