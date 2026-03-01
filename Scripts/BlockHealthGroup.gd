@@ -30,8 +30,11 @@ func AttemptToMinePosition(pos, damage):
 		if instance.AssociatedTile == tileCoords:
 			instance.Hit(damage)
 			return
+	if tileHit.get_custom_data("bBreakable") != "":
+		return
 	var instance = BlockHealthClass.instantiate()
 	instance.AssociatedTile = tileCoords
+	instance.AssociatedTileType = tileHit
 	instance.StartingHealth = tileHit.get_custom_data("Health")
 	instance.global_position = pos + Vector2(20,20)
 	add_child(instance)

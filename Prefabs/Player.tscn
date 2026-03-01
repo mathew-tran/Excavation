@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1p5pawa1ia1f" path="res://Prefabs/AxeHand.tscn" id="2_b43ah"]
 [ext_resource type="Script" uid="uid://b584wjxrswwnf" path="res://Scripts/Player.gd" id="2_shmu5"]
 [ext_resource type="PackedScene" uid="uid://chvjrqvuh546t" path="res://Prefabs/Crosshair.tscn" id="4_shmu5"]
+[ext_resource type="PackedScene" uid="uid://bbpcorh5rkci5" path="res://Prefabs/ItemPickupArea.tscn" id="5_vxq8l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b43ah"]
 size = Vector2(60, 60)
@@ -25,3 +26,5 @@ shape = SubResource("RectangleShape2D_b43ah")
 
 [node name="JumpTimer" type="Timer" parent="." unique_id=1011564940]
 one_shot = true
+
+[node name="ItemPickupArea" parent="." unique_id=1069180871 instance=ExtResource("5_vxq8l")]

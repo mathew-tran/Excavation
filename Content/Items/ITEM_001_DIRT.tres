@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cny813ibb0gv5"]
+
+[ext_resource type="Texture2D" uid="uid://de8gg6jy7ttp8" path="res://Art/Ground/Dirt.png" id="1_bxx36"]
+[ext_resource type="Script" uid="uid://gdtg5mvpfxqf" path="res://Content/DataTypes/ItemData.gd" id="1_pl6kh"]
+
+[resource]
+script = ExtResource("1_pl6kh")
+ItemImage = ExtResource("1_bxx36")
+ItemName = "Dirt"
+metadata/_custom_type_script = "uid://gdtg5mvpfxqf"

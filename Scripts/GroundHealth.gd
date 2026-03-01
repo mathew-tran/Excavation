@@ -3,6 +3,7 @@ extends AnimatedSprite2D
 class_name GroundHealth
 
 var AssociatedTile : Vector2i
+var AssociatedTileType : TileData
 var HealthLeft = 5
 var StartingHealth = 5
 
@@ -26,6 +27,9 @@ func Hit(amount):
 	if HealthLeft <= 0:
 		# Destroy block
 		Finder.GetMiningLayer().set_cell(AssociatedTile, -1)
+		var item = AssociatedTileType.get_custom_data("Item")
+		if item and item is ItemData:
+			Helper.SpawnPickup(item, global_position)
 		queue_free()
 
 func GetHealthPercent():

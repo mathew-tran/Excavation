@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dh57e3q4b3yy2"]
+
+[ext_resource type="Texture2D" uid="uid://lquywyrsuxyv" path="res://Art/Ground/Obsidian.png" id="1_jy2hc"]
+[ext_resource type="Script" uid="uid://u0vrxnycij24" path="res://Scripts/Pickup.gd" id="1_sjvpx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjvpx"]
+
+[sub_resource type="Animation" id="Animation_sjvpx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kf47u"]
+resource_name = "anim"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.74, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxnlq"]
+_data = {
+&"RESET": SubResource("Animation_sjvpx"),
+&"anim": SubResource("Animation_kf47u")
+}
+
+[node name="Pickup" type="RigidBody2D" unique_id=47611829]
+script = ExtResource("1_sjvpx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=315700424]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jy2hc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=850794432]
+shape = SubResource("RectangleShape2D_sjvpx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=818264099]
+libraries/ = SubResource("AnimationLibrary_sxnlq")
