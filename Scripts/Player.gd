@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
+class_name Player
+
 var Gravity = 30
 var MinGravity = 9.8
 var MoveSpeed = 8800
+var JumpStrength = 500
+
+var EffectivenessRange = 160
 
 func _process(delta: float) -> void:
 	if get_global_mouse_position().x <= global_position.x:
@@ -17,7 +22,11 @@ func _process(delta: float) -> void:
 		inputVelocity.x = -1
 	if Input.is_action_pressed("Right"):
 		inputVelocity.x = 1
-		
+	
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		if $JumpTimer.time_left == 0.0:
+			velocity.y -= JumpStrength
+			$JumpTimer.start()
 	if inputVelocity != Vector2.ZERO:
 		velocity.x = inputVelocity.x * MoveSpeed * delta
 	else:

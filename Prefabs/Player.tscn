@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://dx2kv58kiw4t3" path="res://Art/Player/PlayerHead.png" id="1_x3d5u"]
 [ext_resource type="PackedScene" uid="uid://c1p5pawa1ia1f" path="res://Prefabs/AxeHand.tscn" id="2_b43ah"]
 [ext_resource type="Script" uid="uid://b584wjxrswwnf" path="res://Scripts/Player.gd" id="2_shmu5"]
+[ext_resource type="PackedScene" uid="uid://chvjrqvuh546t" path="res://Prefabs/Crosshair.tscn" id="4_shmu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b43ah"]
 size = Vector2(60, 60)
 
-[node name="Player" type="CharacterBody2D" unique_id=1354152897]
+[node name="Player" type="CharacterBody2D" unique_id=1354152897 groups=["Player"]]
 script = ExtResource("2_shmu5")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=627750597]
@@ -19,3 +20,8 @@ texture = ExtResource("1_x3d5u")
 shape = SubResource("RectangleShape2D_b43ah")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=84377794]
+
+[node name="Crosshair" parent="." unique_id=874569324 instance=ExtResource("4_shmu5")]
+
+[node name="JumpTimer" type="Timer" parent="." unique_id=1011564940]
+one_shot = true
