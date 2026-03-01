@@ -8,3 +8,14 @@ func AttemptToUse():
 
 func AttemptHit():
 	Finder.GetCrosshair().AttemptToBreak()
+
+
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "swing":
+		$Timer.start()
+
+
+func _on_timer_timeout() -> void:
+	$AnimationPlayer.play("RESET")

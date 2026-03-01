@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://qas6yr33y22i" path="res://Scripts/LocalInventory.gd" id="6_gg3t4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b43ah"]
-size = Vector2(60, 60)
+size = Vector2(35, 67)
 
 [node name="Player" type="CharacterBody2D" unique_id=1354152897 groups=["Player"]]
 script = ExtResource("2_shmu5")
@@ -19,6 +19,7 @@ texture = ExtResource("1_x3d5u")
 [node name="Hand" parent="Sprite" unique_id=719789392 instance=ExtResource("2_b43ah")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=615663382]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_b43ah")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=84377794]

@@ -25,5 +25,5 @@ func AttemptToBreak():
 	var hitPosition = global_position
 	if hitPosition.distance_to(Finder.GetPlayer().global_position) > Finder.GetPlayer().EffectivenessRange:
 		return
-	Finder.GetBlockHealthGroup().AttemptToMinePosition(hitPosition, .5)
+	Finder.GetBlockHealthGroup().AttemptToMinePosition(hitPosition, .75)
 	
