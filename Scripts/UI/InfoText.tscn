@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c853wwwv82brn"]
+
+[ext_resource type="Script" uid="uid://bt4rwlcmm7th4" path="res://Scripts/UI/InfoText.gd" id="1_0dtdt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s08nd"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="InfoText" type="Label" unique_id=750995018 groups=["InfoText"]]
+process_mode = 3
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_s08nd")
+text = "asdad"
+horizontal_alignment = 1
+script = ExtResource("1_0dtdt")

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://2bax4qe164yq"]
+
+[ext_resource type="Script" uid="uid://bsu0ottljpe3a" path="res://Scripts/UI/ItemUI.gd" id="1_66lao"]
+[ext_resource type="Texture2D" uid="uid://de8gg6jy7ttp8" path="res://Art/Ground/Dirt.png" id="1_fjccq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66lao"]
+bg_color = Color(0.056291588, 0.05629161, 0.05629155, 1)
+
+[node name="ItemUI" type="Panel" unique_id=649350048]
+custom_minimum_size = Vector2(100, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_66lao")
+script = ExtResource("1_66lao")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1598338673]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fjccq")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=2118560784]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = 24.5
+offset_right = 40.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "x 1"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
