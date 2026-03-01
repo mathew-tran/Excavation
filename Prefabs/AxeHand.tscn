@@ -63,4 +63,4 @@ texture = ExtResource("1_ctcd0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=191520616]
 libraries/ = SubResource("AnimationLibrary_ame2i")
-speed_scale = 2.0
+speed_scale = 4.0

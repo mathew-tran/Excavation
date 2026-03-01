@@ -14,4 +14,7 @@ func GetBlockHealthGroup() -> BlockHealthGroup:
 	
 func GetFXGroup():
 	return get_tree().get_nodes_in_group("FXGroup")[0]
+
+func GetPlayerInventory() -> LocalInventory:
+	return get_tree().get_nodes_in_group("LocalInventory")[0]
 	

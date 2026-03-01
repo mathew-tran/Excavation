@@ -43,6 +43,7 @@ _data = {
 }
 
 [node name="Pickup" type="RigidBody2D" unique_id=47611829]
+can_sleep = false
 script = ExtResource("1_sjvpx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=315700424]
@@ -54,3 +55,13 @@ shape = SubResource("RectangleShape2D_sjvpx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=818264099]
 libraries/ = SubResource("AnimationLibrary_sxnlq")
+
+[node name="Timer" type="Timer" parent="." unique_id=2112967356]
+wait_time = 60.0
+autostart = true
+
+[node name="Poll" type="Timer" parent="." unique_id=1766673933]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Poll" to="." method="_on_poll_timeout"]

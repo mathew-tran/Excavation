@@ -10,6 +10,8 @@ var StartingHealth = 5
 func _ready() -> void:
 	HealthLeft = StartingHealth
 	SetFrame()
+	var amount = randi_range(0, 3)
+	rotation_degrees = amount * 90
 	
 func Heal():
 	HealthLeft += .25

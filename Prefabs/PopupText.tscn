@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cf7oohm0ku7j0"]
+
+[ext_resource type="Script" uid="uid://bbedaxbnhn0hw" path="res://Scripts/PopupText.gd" id="1_d1bcu"]
+
+[node name="Label" type="Label" unique_id=633866393]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "+1 STONE (92)"
+script = ExtResource("1_d1bcu")

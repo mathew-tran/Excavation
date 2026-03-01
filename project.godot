@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Finder="*uid://ldmy5wnlsnhh"
 Helper="*uid://bk3wvwsw6suqo"
+SaveManager="*uid://d0g4vaoy3b0hi"
 
 [input]
 

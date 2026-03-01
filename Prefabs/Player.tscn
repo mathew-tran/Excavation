@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b584wjxrswwnf" path="res://Scripts/Player.gd" id="2_shmu5"]
 [ext_resource type="PackedScene" uid="uid://chvjrqvuh546t" path="res://Prefabs/Crosshair.tscn" id="4_shmu5"]
 [ext_resource type="PackedScene" uid="uid://bbpcorh5rkci5" path="res://Prefabs/ItemPickupArea.tscn" id="5_vxq8l"]
+[ext_resource type="Script" uid="uid://qas6yr33y22i" path="res://Scripts/LocalInventory.gd" id="6_gg3t4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b43ah"]
 size = Vector2(60, 60)
@@ -28,3 +29,7 @@ shape = SubResource("RectangleShape2D_b43ah")
 one_shot = true
 
 [node name="ItemPickupArea" parent="." unique_id=1069180871 instance=ExtResource("5_vxq8l")]
+
+[node name="Inventory" type="Node" parent="." unique_id=873284542 groups=["LocalInventory"]]
+script = ExtResource("6_gg3t4")
+bIsPlayer = true
