@@ -10,7 +10,7 @@ var JumpStrength = 500
 var EffectivenessRange = 160
 
 var bIsDead = false
-
+var bStatic = false
 func GetHealthComponent() -> HealthComponent:
 	return $HealthComponent
 	
@@ -18,13 +18,26 @@ func _ready() -> void:
 	GetHealthComponent().OnDeath.connect(OnDeath)
 	
 func OnDeath(health : HealthComponent):
-	bIsDead = true
+	KillPlayer()
 	rotation_degrees = 90
+	await Finder.GetPlayerInventory().ReduceInventoryByPercent(90)
+	await get_tree().create_timer(1.5).timeout
+	Helper.MoveToHub()
+	
+func MakeStatic():
+	bStatic = true
+	visible = false
+	$CollisionShape2D.queue_free()
+	
+func KillPlayer():
+	bIsDead = true
+	
 	$ItemPickupArea.queue_free()
 	$Crosshair.queue_free()
 	
-	
 func _process(delta: float) -> void:
+	if bStatic:
+		return
 	if bIsDead:
 		pass
 	else:
@@ -50,6 +63,12 @@ func _process(delta: float) -> void:
 			velocity.x = 0
 		
 	move_and_slide()
+	
+func IsGrounded():
+	return is_on_floor()
+
+func IsInAir():
+	return is_on_floor() == false
 	
 func _physics_process(delta: float) -> void:
 	

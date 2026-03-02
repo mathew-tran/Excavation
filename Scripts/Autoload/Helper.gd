@@ -37,7 +37,6 @@ func SpawnPickup(item : ItemData, pos):
 	instance.global_position = pos
 	Finder.GetFXGroup().add_child(instance)
 
-func MoveToHub(reducePercent):
-	Finder.GetPlayerInventory().ReduceInventoryByPercent(reducePercent)
+func MoveToHub():
 	Finder.GetPlayerInventory().SaveInventory()
 	get_tree().change_scene_to_file("res://Scenes/Hub.tscn")

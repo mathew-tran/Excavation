@@ -18,12 +18,15 @@ func _ready() -> void:
 	
 	
 func ReduceInventoryByPercent(amount):
+	
 	var itemsToRemove = 0
 	var itemsInInventory = 0
 	for item in Data.keys():
 		itemsInInventory += Data[item]
 	
-	itemsToRemove = int(itemsInInventory * (amount / 100))
+	itemsToRemove = int(float(itemsInInventory) * (float(amount) / 100.0))
+	if itemsInInventory > 0 and itemsToRemove <= 0:
+		itemsToRemove += 1
 	
 	print("Removing X Items" + str(itemsToRemove))
 	while itemsToRemove > 0:
@@ -31,10 +34,12 @@ func ReduceInventoryByPercent(amount):
 		itemsToRemove -= 1
 	
 func RemoveRandomItem():
-	
 	var result = Data.keys().pick_random()
 	while Data[result] <= 0:
 		result = Data.keys().pick_random() 
+		
+	if Finder.GetPlayer():
+		Helper.SpawnPickup(Helper.GetItemFromID(result), Finder.GetPlayer().global_position + Vector2(0, -64))
 	Data[result] -= 1
 	
 func AddItem(item : ItemData, amount = 0, bShowPrompt = true):
