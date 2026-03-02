@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dy3isqin5o3uk"]
+
+[ext_resource type="Script" uid="uid://c7vy1ltahwkpr" path="res://Scripts/UI/HungerBar.gd" id="1_oexap"]
+[ext_resource type="PackedScene" uid="uid://dkuc47u2xe3mv" path="res://Prefabs/UI/HungerIcon.tscn" id="2_iiyth"]
+
+[node name="HungerBar" type="HBoxContainer" unique_id=1726863335]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_oexap")
+
+[node name="TextureRect" parent="." unique_id=1244151145 instance=ExtResource("2_iiyth")]
+layout_mode = 2
+
+[node name="TextureRect2" parent="." unique_id=121897164 instance=ExtResource("2_iiyth")]
+layout_mode = 2
+
+[node name="TextureRect3" parent="." unique_id=691238626 instance=ExtResource("2_iiyth")]
+layout_mode = 2
+
+[node name="TextureRect4" parent="." unique_id=1556321857 instance=ExtResource("2_iiyth")]
+layout_mode = 2
+
+[node name="TextureRect5" parent="." unique_id=131372588 instance=ExtResource("2_iiyth")]
+layout_mode = 2

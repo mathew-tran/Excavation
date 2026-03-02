@@ -77,5 +77,22 @@ script = ExtResource("6_gg3t4")
 script = ExtResource("7_javds")
 metadata/_custom_type_script = "uid://decepgx10tpk6"
 
+[node name="HungerComponent" type="Node" parent="." unique_id=313391016]
+script = ExtResource("7_javds")
+MaxHealth = 5
+bCanDie = false
+metadata/_custom_type_script = "uid://decepgx10tpk6"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=371450473]
 libraries/ = SubResource("AnimationLibrary_lhekp")
+
+[node name="SatedTimer" type="Timer" parent="." unique_id=154675506]
+wait_time = 3.0
+one_shot = true
+
+[node name="HungerTimer" type="Timer" parent="." unique_id=1015118647]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="SatedTimer" to="." method="_on_sated_timer_timeout"]
+[connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]

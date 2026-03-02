@@ -9,6 +9,7 @@ signal OnDeath
 signal OnHit
 
 var bIsDead = false
+@export var bCanDie = true
 
 var bCanTakeDamage = true
 var TimeBetweenDamage = .1
@@ -28,6 +29,18 @@ func Setup():
 func CanTakeDamage():
 	return DamageTakenTimer.time_left == 0.0
 	
+func Heal(amount):
+	if CanTakeDamage() == false:
+		return
+		
+	Health += 1
+	if Health >= MaxHealth:
+		Health = MaxHealth
+	OnHit.emit(self)
+	
+func GetPercentage():
+	return float(Health) / float(MaxHealth) * 100
+	
 func TakeDamage(amount):
 	if CanTakeDamage() == false:
 		return
@@ -38,8 +51,9 @@ func TakeDamage(amount):
 	Health -= amount
 	OnHit.emit(self)
 	if IsAlive() == false:
-		OnDeath.emit(self)
-		bIsDead = true
+		if bCanDie:
+			OnDeath.emit(self)
+			bIsDead = true
 		
 func IsAlive():
 	return Health > 0

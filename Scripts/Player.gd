@@ -14,6 +14,9 @@ var bStatic = false
 func GetHealthComponent() -> HealthComponent:
 	return $HealthComponent
 	
+func GetHungerComponent() -> HealthComponent:
+	return $HungerComponent
+	
 func _ready() -> void:
 	GetHealthComponent().OnDeath.connect(OnDeath)
 	
@@ -36,6 +39,15 @@ func KillPlayer():
 	$ItemPickupArea.queue_free()
 	$Crosshair.queue_free()
 	
+func TakeDamage(dir, amount):
+	if GetHealthComponent().CanTakeDamage():
+		GetHealthComponent().TakeDamage(1)
+		
+		velocity = Vector2.ZERO
+		velocity += dir * 500
+		$AnimationPlayer.stop()
+		$AnimationPlayer.play("hit")
+		
 func _process(delta: float) -> void:
 	if bStatic:
 		return
@@ -45,21 +57,13 @@ func _process(delta: float) -> void:
 		if GetHealthComponent().CanTakeDamage():
 			for i in get_slide_collision_count():
 				var collision = get_slide_collision(i)
-				print(collision.get_position())
 				var tileData = Finder.GetBlockHealthGroup().GetTileCell(collision.get_position())
 				if tileData:
 					if tileData.get_custom_data("bHurt"):
-						if GetHealthComponent().CanTakeDamage():
-							GetHealthComponent().TakeDamage(1)
 							var direction = (global_position - collision.get_position()).normalized()
-							velocity = Vector2.ZERO
-							velocity += direction * 500
-							print(direction)
-							$AnimationPlayer.stop()
-							$AnimationPlayer.play("hit")
+							TakeDamage(direction, 1)
 							move_and_slide()
 							return
-				print("Collided with: ", collision.get_collider().name)
 		if get_global_mouse_position().x <= global_position.x:
 			$Sprite.scale = Vector2(-1,1)
 		else:
@@ -81,8 +85,22 @@ func _process(delta: float) -> void:
 		else:
 			velocity.x = 0
 		
+	$HungerComponent.TakeDamage(1.5 *delta)
 	move_and_slide()
+	CheckHunger()
 	
+func CheckHunger():
+	var hungerPercent = GetHungerComponent().GetPercentage()
+	if hungerPercent > 70:
+		StartTimer($SatedTimer)
+		$HungerTimer.stop()
+	elif hungerPercent <= 1:
+		StartTimer($HungerTimer)
+		$SatedTimer.stop()
+	
+func StartTimer(timer : Timer):
+	if timer.time_left == 0.0:
+		timer.start()
 func IsGrounded():
 	return is_on_floor()
 
@@ -100,3 +118,11 @@ func _physics_process(delta: float) -> void:
 		Gravity = 0
 		velocity.y = 0
 		
+
+
+func _on_sated_timer_timeout() -> void:
+	GetHealthComponent().Heal(1)
+
+
+func _on_hunger_timer_timeout() -> void:
+	TakeDamage(Vector2(.2, 0), 1)

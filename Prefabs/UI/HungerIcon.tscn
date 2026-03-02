@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dkuc47u2xe3mv"]
+
+[ext_resource type="Texture2D" uid="uid://fu0r81wme5yo" path="res://Art/UI/Hunger.png" id="1_1gy5j"]
+
+[node name="TextureRect" type="TextureRect" unique_id=1244151145]
+texture = ExtResource("1_1gy5j")

@@ -10,7 +10,10 @@ func GetPlayer() -> Player:
 	return null
 	
 func GetCrosshair() -> CrossHair:
-	return get_tree().get_nodes_in_group("Crosshair")[0]
+	var result = get_tree().get_nodes_in_group("Crosshair")
+	if result:
+		return result[0]
+	return null
 	
 func GetBlockHealthGroup() -> BlockHealthGroup:
 	return get_tree().get_nodes_in_group("BlockHealthGroup")[0]

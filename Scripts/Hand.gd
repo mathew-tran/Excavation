@@ -7,7 +7,8 @@ func AttemptToUse():
 		$AnimationPlayer.play("swing")
 
 func AttemptHit():
-	Finder.GetCrosshair().AttemptToBreak()
+	if Finder.GetCrosshair():
+		Finder.GetCrosshair().AttemptToBreak()
 
 
 
