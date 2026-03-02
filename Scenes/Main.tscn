@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bollbwkjf1fwe" path="res://Prefabs/UI/InventoryUI.tscn" id="10_bmxlf"]
 [ext_resource type="PackedScene" uid="uid://c853wwwv82brn" path="res://Scripts/UI/InfoText.tscn" id="11_4kpch"]
 [ext_resource type="PackedScene" uid="uid://kheit6y4pmfp" path="res://Prefabs/Objects/Portal.tscn" id="12_grg3l"]
-[ext_resource type="PackedScene" uid="uid://vr810iaqr852" path="res://Scripts/GoHomeAbility.tscn" id="13_frkhe"]
+[ext_resource type="PackedScene" uid="uid://vr810iaqr852" path="res://Prefabs/GoHomeAbility.tscn" id="13_frkhe"]
+[ext_resource type="PackedScene" uid="uid://d063aoe1an5j2" path="res://Prefabs/UI/Healthbar.tscn" id="14_1p5hy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_idj7w")
@@ -91,3 +92,5 @@ visible = false
 [node name="InfoText" parent="CanvasLayer" unique_id=750995018 instance=ExtResource("11_4kpch")]
 
 [node name="Panel" parent="CanvasLayer" unique_id=1413947031 instance=ExtResource("13_frkhe")]
+
+[node name="Healthbar" parent="CanvasLayer" unique_id=1726863335 instance=ExtResource("14_1p5hy")]

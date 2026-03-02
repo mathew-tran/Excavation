@@ -9,28 +9,45 @@ var JumpStrength = 500
 
 var EffectivenessRange = 160
 
-func _process(delta: float) -> void:
-	if get_global_mouse_position().x <= global_position.x:
-		$Sprite.scale = Vector2(-1,1)
-	else:
-		$Sprite.scale = Vector2(1,1)
+var bIsDead = false
 
-	if Input.is_action_pressed("Swing"):
-		$Sprite/Hand.AttemptToUse()
-	var inputVelocity = Vector2.ZERO
-	if Input.is_action_pressed("Left"):
-		inputVelocity.x = -1
-	if Input.is_action_pressed("Right"):
-		inputVelocity.x = 1
+func GetHealthComponent() -> HealthComponent:
+	return $HealthComponent
 	
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		if $JumpTimer.time_left == 0.0:
-			velocity.y -= JumpStrength
-			$JumpTimer.start()
-	if inputVelocity != Vector2.ZERO:
-		velocity.x = inputVelocity.x * MoveSpeed * delta
+func _ready() -> void:
+	GetHealthComponent().OnDeath.connect(OnDeath)
+	
+func OnDeath(health : HealthComponent):
+	bIsDead = true
+	rotation_degrees = 90
+	$ItemPickupArea.queue_free()
+	$Crosshair.queue_free()
+	
+	
+func _process(delta: float) -> void:
+	if bIsDead:
+		pass
 	else:
-		velocity.x = 0
+		if get_global_mouse_position().x <= global_position.x:
+			$Sprite.scale = Vector2(-1,1)
+		else:
+			$Sprite.scale = Vector2(1,1)
+
+		if Input.is_action_pressed("Swing"):
+			$Sprite/Hand.AttemptToUse()
+		var inputVelocity = Vector2.ZERO
+		if Input.is_action_pressed("Left"):
+			inputVelocity.x = -1
+		if Input.is_action_pressed("Right"):
+			inputVelocity.x = 1
+		if Input.is_action_just_pressed("Jump") and is_on_floor():
+			if $JumpTimer.time_left == 0.0:
+				velocity.y -= JumpStrength
+				$JumpTimer.start()
+		if inputVelocity != Vector2.ZERO:
+			velocity.x = inputVelocity.x * MoveSpeed * delta
+		else:
+			velocity.x = 0
 		
 	move_and_slide()
 	

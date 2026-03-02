@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d063aoe1an5j2"]
+
+[ext_resource type="Script" uid="uid://dehcphxvl8xh8" path="res://Scripts/UI/Healthbar.gd" id="1_h7ary"]
+[ext_resource type="Texture2D" uid="uid://dc3cipnnlwiyw" path="res://Art/UI/Health.png" id="1_rmhth"]
+[ext_resource type="PackedScene" uid="uid://edb2owm16r4p" path="res://Prefabs/UI/HealthIcon.tscn" id="2_0aswe"]
+
+[node name="Healthbar" type="HBoxContainer" unique_id=1726863335]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_h7ary")
+
+[node name="TextureRect" parent="." unique_id=1244151145 instance=ExtResource("2_0aswe")]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=423639991]
+layout_mode = 2
+texture = ExtResource("1_rmhth")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1380404109]
+layout_mode = 2
+texture = ExtResource("1_rmhth")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1154814688]
+layout_mode = 2
+texture = ExtResource("1_rmhth")

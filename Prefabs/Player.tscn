@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chvjrqvuh546t" path="res://Prefabs/Crosshair.tscn" id="4_shmu5"]
 [ext_resource type="PackedScene" uid="uid://bbpcorh5rkci5" path="res://Prefabs/ItemPickupArea.tscn" id="5_vxq8l"]
 [ext_resource type="Script" uid="uid://qas6yr33y22i" path="res://Scripts/LocalInventory.gd" id="6_gg3t4"]
+[ext_resource type="Script" uid="uid://decepgx10tpk6" path="res://Scripts/Component/HealthComponent.gd" id="7_javds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b43ah"]
 size = Vector2(35, 67)
@@ -33,3 +34,7 @@ one_shot = true
 
 [node name="Inventory" type="Node" parent="." unique_id=873284542 groups=["LocalInventory"]]
 script = ExtResource("6_gg3t4")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=7062409]
+script = ExtResource("7_javds")
+metadata/_custom_type_script = "uid://decepgx10tpk6"
