@@ -3,6 +3,46 @@
 [ext_resource type="Texture2D" uid="uid://6p1tlluathxu" path="res://Art/Object/PlayerSack.png" id="1_y5bvl"]
 [ext_resource type="Script" uid="uid://c5315c0cbntrb" path="res://Scripts/PlayerSack.gd" id="2_pcocy"]
 
+[sub_resource type="Animation" id="Animation_pcocy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_57pka"]
+resource_name = "loseItem"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.39),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmyg2"]
+_data = {
+&"RESET": SubResource("Animation_pcocy"),
+&"loseItem": SubResource("Animation_57pka")
+}
+
 [node name="PlayerSack" type="Sprite2D" unique_id=1078546132]
 texture = ExtResource("1_y5bvl")
 script = ExtResource("2_pcocy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=576067709]
+libraries/ = SubResource("AnimationLibrary_qmyg2")

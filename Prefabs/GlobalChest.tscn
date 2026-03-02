@@ -1,6 +1,49 @@
 [gd_scene format=3 uid="uid://dverlmaw208ts"]
 
 [ext_resource type="Texture2D" uid="uid://bm5j5jme8qt8a" path="res://Art/Object/Chest.png" id="1_tamx6"]
+[ext_resource type="Script" uid="uid://bd1bj3tgo1t1i" path="res://Scripts/GlobalChest.gd" id="2_e048v"]
+
+[sub_resource type="Animation" id="Animation_tamx6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="Animation" id="Animation_e048v"]
+resource_name = "gainItem"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.29),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wsxwh"]
+_data = {
+&"RESET": SubResource("Animation_tamx6"),
+&"gainItem": SubResource("Animation_e048v")
+}
 
 [node name="GlobalChest" type="Sprite2D" unique_id=584893735]
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_tamx6")
+script = ExtResource("2_e048v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1293247931]
+libraries/ = SubResource("AnimationLibrary_wsxwh")

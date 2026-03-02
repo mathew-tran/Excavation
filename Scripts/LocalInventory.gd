@@ -32,7 +32,10 @@ func AddItem(item : ItemData, amount = 0, bShowPrompt = true):
 
 			str += " " + item.ItemName + " "
 			str += "(" + str(Data[item.ItemID]) + ")"
-			Helper.SpawnText(str, Finder.GetPlayer().global_position)
+			var spawnTarget = Finder.GetPlayer()
+			if spawnTarget == null:
+				spawnTarget = Finder.GetGlobalChest()			
+			Helper.SpawnText(str, spawnTarget.global_position)
 	OnInventoryUpdate.emit()
 	return str
 

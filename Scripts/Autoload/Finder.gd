@@ -4,7 +4,10 @@ func GetMiningLayer() -> TileMapLayer:
 	return get_tree().get_nodes_in_group("MiningLayer")[0]
 
 func GetPlayer() -> Player:
-	return get_tree().get_nodes_in_group("Player")[0]
+	var result = get_tree().get_nodes_in_group("Player")
+	if result:
+		return result[0]
+	return null
 	
 func GetCrosshair() -> CrossHair:
 	return get_tree().get_nodes_in_group("Crosshair")[0]
@@ -23,6 +26,9 @@ func GetGlobalInventory() -> LocalInventory:
 	
 func GetInventoryUI() -> InventoryUI:
 	return get_tree().get_nodes_in_group("InventoryUI")[0]
+	
+func GetGlobalChest():
+	return get_tree().get_nodes_in_group("GlobalChest")[0]
 	
 func GetInfoText() -> InfoText:
 	return get_tree().get_nodes_in_group("InfoText")[0]

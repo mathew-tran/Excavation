@@ -15,8 +15,10 @@ metadata/_custom_type_script = "uid://qas6yr33y22i"
 script = ExtResource("1_ye28g")
 metadata/_custom_type_script = "uid://qas6yr33y22i"
 
-[node name="GlobalChest" parent="." unique_id=584893735 instance=ExtResource("2_nqj8h")]
+[node name="GlobalChest" parent="." unique_id=584893735 groups=["GlobalChest"] instance=ExtResource("2_nqj8h")]
 position = Vector2(496, 602)
 
 [node name="PlayerSack" parent="." unique_id=1078546132 instance=ExtResource("3_shh0t")]
 position = Vector2(1097, 616)
+
+[node name="FXGroup" type="Node2D" parent="." unique_id=1516051695 groups=["FXGroup"]]
