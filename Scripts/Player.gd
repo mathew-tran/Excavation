@@ -22,6 +22,7 @@ func OnDeath(health : HealthComponent):
 	rotation_degrees = 90
 	await Finder.GetPlayerInventory().ReduceInventoryByPercent(90)
 	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2.5).timeout
 	Helper.MoveToHub()
 	
 func MakeStatic():
@@ -41,6 +42,24 @@ func _process(delta: float) -> void:
 	if bIsDead:
 		pass
 	else:
+		if GetHealthComponent().CanTakeDamage():
+			for i in get_slide_collision_count():
+				var collision = get_slide_collision(i)
+				print(collision.get_position())
+				var tileData = Finder.GetBlockHealthGroup().GetTileCell(collision.get_position())
+				if tileData:
+					if tileData.get_custom_data("bHurt"):
+						if GetHealthComponent().CanTakeDamage():
+							GetHealthComponent().TakeDamage(1)
+							var direction = (global_position - collision.get_position()).normalized()
+							velocity = Vector2.ZERO
+							velocity += direction * 500
+							print(direction)
+							$AnimationPlayer.stop()
+							$AnimationPlayer.play("hit")
+							move_and_slide()
+							return
+				print("Collided with: ", collision.get_collider().name)
 		if get_global_mouse_position().x <= global_position.x:
 			$Sprite.scale = Vector2(-1,1)
 		else:

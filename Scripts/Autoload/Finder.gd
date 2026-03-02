@@ -33,3 +33,6 @@ func GetGlobalChest():
 func GetInfoText() -> InfoText:
 	return get_tree().get_nodes_in_group("InfoText")[0]
 	
+func GetPlayerSack() -> PlayerSack:
+	return get_tree().get_nodes_in_group("PlayerSack")[0]
+	

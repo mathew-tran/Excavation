@@ -40,7 +40,7 @@ _data = {
 &"loseItem": SubResource("Animation_57pka")
 }
 
-[node name="PlayerSack" type="Sprite2D" unique_id=1078546132]
+[node name="PlayerSack" type="Sprite2D" unique_id=1078546132 groups=["PlayerSack"]]
 texture = ExtResource("1_y5bvl")
 script = ExtResource("2_pcocy")
 

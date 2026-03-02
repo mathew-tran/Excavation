@@ -2,10 +2,12 @@ extends HBoxContainer
 
 @onready var HealthIcon = preload("res://Prefabs/UI/HealthIcon.tscn")
 var HealthTexture
+
 func _ready() -> void:
 	Finder.GetPlayer().GetHealthComponent().OnDeath.connect(OnDeath)
 	Finder.GetPlayer().GetHealthComponent().OnHit.connect(OnHit)
 	OnHit(Finder.GetPlayer().GetHealthComponent())
+	visible = true
 	
 func OnHit(health : HealthComponent):
 	for child in get_children():

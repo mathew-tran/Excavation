@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://qas6yr33y22i" path="res://Scripts/LocalInventory.gd" id="1_ye28g"]
 [ext_resource type="PackedScene" uid="uid://dverlmaw208ts" path="res://Prefabs/GlobalChest.tscn" id="2_nqj8h"]
 [ext_resource type="PackedScene" uid="uid://b82dbtrtw0pqi" path="res://Prefabs/PlayerSack.tscn" id="3_shh0t"]
+[ext_resource type="Script" uid="uid://dm2hhakymgafy" path="res://Scripts/UI/HubUI.gd" id="4_shh0t"]
+[ext_resource type="Script" uid="uid://c644jpd3vcuo8" path="res://Scripts/UI/GoToMineButton.gd" id="5_66k2d"]
 
 [node name="Node2D" type="Node2D" unique_id=130955816]
 
@@ -22,3 +24,28 @@ position = Vector2(500, 552)
 position = Vector2(1097, 616)
 
 [node name="FXGroup" type="Node2D" parent="." unique_id=1516051695 groups=["FXGroup"]]
+
+[node name="HubUI" type="CanvasLayer" parent="." unique_id=773319816]
+script = ExtResource("4_shh0t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HubUI" unique_id=632954391]
+custom_minimum_size = Vector2(400, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MineButton" type="Button" parent="HubUI/VBoxContainer" unique_id=1647805962]
+layout_mode = 2
+text = "MINE"
+script = ExtResource("5_66k2d")
+
+[connection signal="button_up" from="HubUI/VBoxContainer/MineButton" to="HubUI/VBoxContainer/MineButton" method="_on_button_up"]

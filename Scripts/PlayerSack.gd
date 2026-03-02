@@ -1,5 +1,9 @@
 extends Sprite2D
 
+class_name PlayerSack
+
+signal OnSackCompleted
+
 
 @onready var PickupClass = preload("res://Prefabs/Pickup.tscn")
 
@@ -33,4 +37,5 @@ func GiveItemsToGlobalChest():
 	Finder.GetPlayerInventory().Clear()
 	Finder.GetGlobalInventory().SaveInventory()
 	SaveManager.Save()
+	OnSackCompleted.emit()
 			
