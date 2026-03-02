@@ -5,6 +5,8 @@ class_name Pickup
 var bIsMovingTowardsTarget = false
 @export var ItemType : ItemData
 var Target : Node2D
+
+var Speed = 500
 func _ready() -> void:
 	if ItemType:
 		$Sprite2D.texture = ItemType.ItemImage
@@ -24,7 +26,7 @@ func _process(delta: float) -> void:
 	if bIsMovingTowardsTarget:
 		freeze = true
 		
-		global_position = global_position.move_toward(Target.global_position, delta * 500)
+		global_position = global_position.move_toward(Target.global_position, delta * Speed)
 		if global_position.distance_to(Target.global_position) < 10:
 			if Target is Player:
 				Finder.GetPlayerInventory().AddItem(ItemType, 1, true)

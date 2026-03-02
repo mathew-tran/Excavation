@@ -17,6 +17,26 @@ func _ready() -> void:
 	LoadInventory()
 	
 	
+func ReduceInventoryByPercent(amount):
+	var itemsToRemove = 0
+	var itemsInInventory = 0
+	for item in Data.keys():
+		itemsInInventory += Data[item]
+	
+	itemsToRemove = int(itemsInInventory * (amount / 100))
+	
+	print("Removing X Items" + str(itemsToRemove))
+	while itemsToRemove > 0:
+		RemoveRandomItem()
+		itemsToRemove -= 1
+	
+func RemoveRandomItem():
+	
+	var result = Data.keys().pick_random()
+	while Data[result] <= 0:
+		result = Data.keys().pick_random() 
+	Data[result] -= 1
+	
 func AddItem(item : ItemData, amount = 0, bShowPrompt = true):
 	if Data.has(item.ItemID):
 		Data[item.ItemID] += amount
@@ -39,6 +59,10 @@ func AddItem(item : ItemData, amount = 0, bShowPrompt = true):
 	OnInventoryUpdate.emit()
 	return str
 
+func Clear():
+	Data.clear()
+	SaveInventory()
+	
 func RemoveItem(item:  ItemData, amount = 1, bShowPrompt = false):
 	if Data.has(item.ItemID):
 		Data[item.ItemID] -= amount

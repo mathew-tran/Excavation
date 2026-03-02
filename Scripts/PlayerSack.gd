@@ -23,9 +23,14 @@ func GiveItemsToGlobalChest():
 			instance.ItemType = itemType
 			Finder.GetFXGroup().add_child(instance)
 			instance.Target = globalChest
+			instance.Speed *= 2
 			instance.MoveTowardsTarget()
 			instance.global_position = global_position
 			await get_tree().create_timer(waitTime).timeout
 			waitTime *= .75
 			
+	await get_tree().create_timer(1.0).timeout
+	Finder.GetPlayerInventory().Clear()
+	Finder.GetGlobalInventory().SaveInventory()
+	SaveManager.Save()
 			
