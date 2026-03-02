@@ -15,7 +15,9 @@ func GiveItemsToGlobalChest():
 	print("Give items to global chest")
 	var data = Finder.GetPlayerInventory().Data
 	var globalChest = Finder.GetGlobalChest()
+	var hasItems = false
 	for key in data.keys():
+		
 		var waitTime = .5
 		print(key)
 		var itemType = Helper.GetItemFromID(key)
@@ -32,8 +34,10 @@ func GiveItemsToGlobalChest():
 			instance.global_position = global_position
 			await get_tree().create_timer(waitTime).timeout
 			waitTime *= .75
+			hasItems = true
 			
-	await get_tree().create_timer(1.0).timeout
+	if hasItems:
+		await get_tree().create_timer(1.0).timeout
 	Finder.GetPlayerInventory().Clear()
 	Finder.GetGlobalInventory().SaveInventory()
 	SaveManager.Save()

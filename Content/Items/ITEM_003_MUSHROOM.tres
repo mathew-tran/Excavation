@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EdibleItemData" format=3 uid="uid://dnrdk2itqjdel"]
+
+[ext_resource type="Texture2D" uid="uid://b8e4oryfwse6v" path="res://Art/Object/Food/Mushroom.png" id="1_10fy6"]
+[ext_resource type="Script" uid="uid://cwnpiknic7gdx" path="res://Content/DataTypes/EdibleItemData.gd" id="1_hxo2w"]
+
+[resource]
+script = ExtResource("1_hxo2w")
+HungerAmount = 2
+ItemImage = ExtResource("1_10fy6")
+ItemName = "Mushroom"
+ItemID = "003"
+metadata/_custom_type_script = "uid://cwnpiknic7gdx"

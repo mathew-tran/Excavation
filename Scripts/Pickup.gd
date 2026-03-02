@@ -18,9 +18,12 @@ func _ready() -> void:
 func MoveTowardsTarget():
 	if bIsMovingTowardsTarget:
 		return
+	if $CanHitTimer.time_left != 0.0:
+		return
+		
 	bIsMovingTowardsTarget = true
 	$AnimationPlayer.stop()
-	$CollisionShape2D.queue_free()
+	$CollisionShape2D.set_deferred("disabled", true)
 	
 func _process(delta: float) -> void:
 	if bIsMovingTowardsTarget:
@@ -29,7 +32,19 @@ func _process(delta: float) -> void:
 		global_position = global_position.move_toward(Target.global_position, delta * Speed)
 		if global_position.distance_to(Target.global_position) < 10:
 			if Target is Player:
-				Finder.GetPlayerInventory().AddItem(ItemType, 1, true)
+				if ItemType is EdibleItemData:
+					var percent = Target.GetHungerComponent().GetPercentage()
+					if percent < 98:
+						Finder.GetPlayer().GetHungerComponent().Heal(ItemType.HungerAmount)
+					else:
+						print("player too full : "+ str(percent) + "%")
+						bIsMovingTowardsTarget = false
+						freeze = false
+						$CollisionShape2D.set_deferred("disabled", false)
+						$CanHitTimer.start()
+						return
+				else:
+					Finder.GetPlayerInventory().AddItem(ItemType, 1, true)
 			else:
 				Finder.GetGlobalInventory().AddItem(ItemType, 1, true)
 			queue_free()

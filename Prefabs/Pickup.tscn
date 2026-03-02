@@ -43,6 +43,8 @@ _data = {
 }
 
 [node name="Pickup" type="RigidBody2D" unique_id=47611829]
+collision_layer = 4
+collision_mask = 5
 can_sleep = false
 script = ExtResource("1_sjvpx")
 
@@ -62,6 +64,10 @@ autostart = true
 
 [node name="Poll" type="Timer" parent="." unique_id=1766673933]
 autostart = true
+
+[node name="CanHitTimer" type="Timer" parent="." unique_id=2108867063]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Poll" to="." method="_on_poll_timeout"]

@@ -2,5 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://fu0r81wme5yo" path="res://Art/UI/Hunger.png" id="1_1gy5j"]
 
-[node name="TextureRect" type="TextureRect" unique_id=1244151145]
-texture = ExtResource("1_1gy5j")
+[node name="TextureRect" type="TextureProgressBar" unique_id=176397332]
+offset_right = 32.0
+offset_bottom = 32.0
+value = 100.0
+texture_under = ExtResource("1_1gy5j")
+texture_progress = ExtResource("1_1gy5j")
+tint_under = Color(0.12225223, 0.12225223, 0.12225223, 1)

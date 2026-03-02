@@ -19,7 +19,18 @@ func OnHit(health : HealthComponent):
 		add_child(instance)
 		if amount >= currentHealth:
 			instance.modulate = Color.BLACK
-	
+		
+		var value = 0	
+		if currentHealth - 1 > amount:
+			value = 1
+		else:
+			var healthValue = currentHealth
+			while healthValue >= 1:
+				healthValue -= 1
+			value = healthValue
+
+		var progress = lerp(0, 100, value)
+		instance.value = progress
 
 func OnDeath(health: HealthComponent):
 	visible = false

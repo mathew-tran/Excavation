@@ -11,6 +11,13 @@ var EffectivenessRange = 160
 
 var bIsDead = false
 var bStatic = false
+
+var MinutesPerHungerPiece = 3
+
+func GetHungerDecayRate(delta):
+	var result = delta / (MinutesPerHungerPiece * 60)
+	return result
+	
 func GetHealthComponent() -> HealthComponent:
 	return $HealthComponent
 	
@@ -85,7 +92,7 @@ func _process(delta: float) -> void:
 		else:
 			velocity.x = 0
 		
-	$HungerComponent.TakeDamage(1.5 *delta)
+	$HungerComponent.TakeDamage(GetHungerDecayRate(delta))
 	move_and_slide()
 	CheckHunger()
 	
@@ -117,6 +124,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		Gravity = 0
 		velocity.y = 0
+		$JumpTimer.stop()
 		
 
 

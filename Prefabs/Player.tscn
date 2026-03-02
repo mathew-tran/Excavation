@@ -69,6 +69,7 @@ shape = SubResource("RectangleShape2D_b43ah")
 one_shot = true
 
 [node name="ItemPickupArea" parent="." unique_id=1069180871 instance=ExtResource("5_vxq8l")]
+collision_mask = 4
 
 [node name="Inventory" type="Node" parent="." unique_id=873284542 groups=["LocalInventory"]]
 script = ExtResource("6_gg3t4")
@@ -81,6 +82,7 @@ metadata/_custom_type_script = "uid://decepgx10tpk6"
 script = ExtResource("7_javds")
 MaxHealth = 5
 bCanDie = false
+bCanDelay = false
 metadata/_custom_type_script = "uid://decepgx10tpk6"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=371450473]
