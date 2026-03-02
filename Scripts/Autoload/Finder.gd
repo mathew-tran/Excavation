@@ -18,6 +18,9 @@ func GetFXGroup():
 func GetPlayerInventory() -> LocalInventory:
 	return get_tree().get_nodes_in_group("LocalInventory")[0]
 	
+func GetGlobalInventory() -> LocalInventory:
+	return get_tree().get_nodes_in_group("GlobalInventory")[0]
+	
 func GetInventoryUI() -> InventoryUI:
 	return get_tree().get_nodes_in_group("InventoryUI")[0]
 	

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6r41yhrwa33u"]
+
+[ext_resource type="Script" uid="uid://qas6yr33y22i" path="res://Scripts/LocalInventory.gd" id="1_ye28g"]
+[ext_resource type="PackedScene" uid="uid://dverlmaw208ts" path="res://Prefabs/GlobalChest.tscn" id="2_nqj8h"]
+[ext_resource type="PackedScene" uid="uid://b82dbtrtw0pqi" path="res://Prefabs/PlayerSack.tscn" id="3_shh0t"]
+
+[node name="Node2D" type="Node2D" unique_id=130955816]
+
+[node name="GlobalInventory" type="Node" parent="." unique_id=135333557 groups=["GlobalInventory"]]
+script = ExtResource("1_ye28g")
+InventoryType = 1
+metadata/_custom_type_script = "uid://qas6yr33y22i"
+
+[node name="LocalInventory" type="Node" parent="." unique_id=1870342397 groups=["LocalInventory"]]
+script = ExtResource("1_ye28g")
+metadata/_custom_type_script = "uid://qas6yr33y22i"
+
+[node name="GlobalChest" parent="." unique_id=584893735 instance=ExtResource("2_nqj8h")]
+position = Vector2(496, 602)
+
+[node name="PlayerSack" parent="." unique_id=1078546132 instance=ExtResource("3_shh0t")]
+position = Vector2(1097, 616)

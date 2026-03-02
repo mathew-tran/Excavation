@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cf7oohm0ku7j0" path="res://Prefabs/PopupText.tscn" id="9_vy5pj"]
 [ext_resource type="PackedScene" uid="uid://bollbwkjf1fwe" path="res://Prefabs/UI/InventoryUI.tscn" id="10_bmxlf"]
 [ext_resource type="PackedScene" uid="uid://c853wwwv82brn" path="res://Scripts/UI/InfoText.tscn" id="11_4kpch"]
+[ext_resource type="PackedScene" uid="uid://kheit6y4pmfp" path="res://Prefabs/Objects/Portal.tscn" id="12_grg3l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kln2b"]
 texture = ExtResource("2_idj7w")
@@ -65,6 +66,11 @@ tile_map_data = PackedByteArray("AAAQAA4AAAAAAAAAAAARAA4AAAAAAAAAAAASAA4AAAAAAAA
 tile_set = SubResource("TileSet_rgh2o")
 
 [node name="Health" parent="." unique_id=218940041 instance=ExtResource("2_kln2b")]
+
+[node name="Objects" type="Node2D" parent="." unique_id=1910418123]
+
+[node name="Portal" parent="Objects" unique_id=1202185853 instance=ExtResource("12_grg3l")]
+position = Vector2(-32, 560)
 
 [node name="Player2" parent="." unique_id=627750597 instance=ExtResource("1_r150o")]
 position = Vector2(742, 475)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dverlmaw208ts"]
+
+[ext_resource type="Texture2D" uid="uid://bm5j5jme8qt8a" path="res://Art/Object/Chest.png" id="1_tamx6"]
+
+[node name="GlobalChest" type="Sprite2D" unique_id=584893735]
+texture = ExtResource("1_tamx6")

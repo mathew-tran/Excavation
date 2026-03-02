@@ -33,4 +33,3 @@ one_shot = true
 
 [node name="Inventory" type="Node" parent="." unique_id=873284542 groups=["LocalInventory"]]
 script = ExtResource("6_gg3t4")
-bIsPlayer = true

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b82dbtrtw0pqi"]
+
+[ext_resource type="Texture2D" uid="uid://6p1tlluathxu" path="res://Art/Object/PlayerSack.png" id="1_y5bvl"]
+[ext_resource type="Script" uid="uid://c5315c0cbntrb" path="res://Scripts/PlayerSack.gd" id="2_pcocy"]
+
+[node name="PlayerSack" type="Sprite2D" unique_id=1078546132]
+texture = ExtResource("1_y5bvl")
+script = ExtResource("2_pcocy")
